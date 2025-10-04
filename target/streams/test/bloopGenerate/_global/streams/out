@@ -1,0 +1,4 @@
+[debug] [scalafp-test] Classpath dependencies List()
+[debug] [scalafp-test] Dependencies from configurations List(scalafp)
+[debug] Bloop wrote the configuration of project 'scalafp-test' to '/Users/muntasirraihanrahman/Documents/ScalaFP/.bloop/scalafp-test.json'
+[success] Generated .bloop/scalafp-test.json

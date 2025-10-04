@@ -1,0 +1,19 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/scalafp_2.13-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HelloActor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/HelloActor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	HelloActor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/HelloActor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/HelloWorld.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/example/HelloWorld.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/HelloWorld$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/example/HelloWorld$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes/Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
