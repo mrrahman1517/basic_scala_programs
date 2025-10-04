@@ -93,6 +93,16 @@ def ahtsumFactorials(a: Int, b: Int): Int = sumTailRec(x => factorial(x), a, b)
 
 assert(ahtsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
+def currySum(f: Int => Int): (Int, Int) => Int = {
+    def sumF(a: Int, b: Int): Int = {
+        if (a > b) 0
+        else f(a) + sumF(a+1, b)
+    }
+    sumF
+}
+
+assert(currySum(x=>x*x)(1,3) == square(1) + square(2) + square(3))
+
 
 
 /*</script>*/ /*<generated>*//*</generated>*/
