@@ -66,5 +66,25 @@ def ahsumFactorials(a: Int, b: Int): Int = sum(x => factorial(x), a, b)
 
 assert(ahsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
+def sumTailRec(f: Int => Int, a: Int, b: Int): Int = {
+    def loop(a: Int, acc: Int): Int = {
+        if (a > b) acc  
+            else loop(a+1, f(a) + acc)
+    }
+    loop(a, 0)
+}
+
+def ahtsumInts(a: Int, b: Int) = sumTailRec(x => x, a, b)
+assert(ahtsumInts(1,10) == 55)
+
+def ahtsumSquares(a: Int, b: Int) = sumTailRec(x=> x*x, a, b)
+assert(ahtsumSquares(1,10) == 10*(10+1)*(2*10+1)/6)
+
+def ahtsumCubes(a: Int, b: Int): Int = sumTailRec(x => x*x*x, a, b)
+assert(ahtsumCubes(2,4) == cube(2) + cube(3) + cube(4))
+
+def ahtsumFactorials(a: Int, b: Int): Int = sumTailRec(x => factorial(x), a, b)
+
+assert(ahtsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
 
