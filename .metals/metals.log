@@ -2232,3 +2232,11 @@ WARNING: Unmatched cancel notification for request id 1841
 2025.10.04 11:11:28 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 90ms
 2025.10.04 11:12:50 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
 2025.10.04 11:12:50 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 99ms
+Oct 04, 2025 1:11:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2790
+2025.10.04 13:16:43 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 13:16:43 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.12s
+2025.10.04 13:17:44 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 13:17:44 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 96ms
+2025.10.04 13:18:01 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 13:18:01 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 95ms

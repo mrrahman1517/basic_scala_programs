@@ -1,69 +1,67 @@
-/*
- * Higher-Order Functions (HOF) demonstration in Scala
+/**
+ * Higher-Order Functions (HOF) Demonstration in Scala
+ * =====================================================
+ * 
+ * This file demonstrates the evolution from specific, repetitive functions
+ * to elegant, reusable higher-order functions - a core principle of functional programming.
  * 
  * LEARNING PROGRESSION:
- * 1. Start with specific, repetitive functions (sumInts, sumSquares, etc.)
- * 2. Identify common patterns and extract them into higher-order functions
- * 3. Show how HOFs eliminate code duplication and increase abstraction
- * 4. Demonstrate different ways to pass functions (named vs anonymous)
- * 5. Introduce tail recursion for performance optimization
- * 6. Explore currying for partial application
- * 7. Generalize further with map-reduce pattern
- * 8. Apply concepts to numerical computation (fixed-point iteration)
+ * 1. Problem: Repetitive functions with similar structure (sumInts, sumSquares, etc.)
+ * 2. Solution: Extract common pattern into higher-order function (sum)
+ * 3. Enhancement: Use anonymous functions for conciseness
+ * 4. Optimization: Apply tail recursion for performance
+ * 5. Abstraction: Introduce currying for partial application
+ * 6. Generalization: Map-reduce pattern for ultimate flexibility
+ * 7. Application: Fixed-point iteration for numerical computation
  * 
- * KEY FUNCTIONAL PROGRAMMING CONCEPTS DEMONSTRATED:
- * - Functions as first-class values
- * - Higher-order functions (functions that take/return other functions)
- * - Lambda expressions (anonymous functions)
- * - Currying and partial application
- * - Tail recursion optimization
- * - Function composition and abstraction
+ * KEY CONCEPTS DEMONSTRATED:
+ * • Functions as first-class values
+ * • Higher-order functions (functions operating on other functions)
+ * • Lambda expressions (anonymous functions)
+ * • Currying and partial application
+ * • Tail recursion optimization
+ * • Function composition and abstraction
+ * • DRY principle (Don't Repeat Yourself)
  */
-
-// Higher-Order Functions (HOF) demonstration in Scala
-// This file shows the evolution from specific functions to generic higher-order functions
 
 import scala.annotation.tailrec
 
+// ============================================================================
+// PART 1: THE PROBLEM - Code Duplication
+// ============================================================================
+
 // Basic recursive function to sum integers from a to b
-// Pattern: if range empty (a > b) return base case (0)
-//          else add current value (a) to sum of rest (a+1 to b)
+// Recursive pattern: base case (empty range) + recursive case (current + rest)
 def sumInts(a: Int, b: Int): Int = 
-    if (a >b) 0 else a + sumInts(a+1,b)
+    if (a > b) 0 else a + sumInts(a+1, b)
 
-assert(sumInts(5,3) == 0)  // Empty range returns 0
-assert(sumInts(1,10) == (1+10)*10/2)  // Arithmetic series formula: n(first+last)/2
+assert(sumInts(5,3) == 0)              // Empty range test
+assert(sumInts(1,10) == 55)            // 1+2+...+10 = 55 (arithmetic series)
 
-// Helper functions for mathematical operations
-// Notice these are pure functions - no side effects, same input always gives same output
-def cube(x:Int): Int = x * x * x
+// Pure mathematical functions - deterministic, no side effects
+def cube(x: Int): Int = x * x * x
+def square(x: Int): Int = x * x
 
-def square(x:Int):Int = x * x
+// THE PROBLEM: Code duplication violates DRY principle
+// Notice the identical recursive structure in these functions:
 
-// PROBLEM: Code duplication in the following functions
-// All follow same pattern: recursive structure with different operations
-// This violates DRY principle (Don't Repeat Yourself)
-
-// Specific function to sum squares from a to b
-// Same recursive structure as sumInts, just applies square() to each element
 def sumSquares(a: Int, b: Int): Int = 
-    if (a > b) 0 else square(a) + sumSquares(a+1,b)
+    if (a > b) 0 else square(a) + sumSquares(a+1, b)
 
-assert(sumSquares(1,10) == 10*(10+1)*(2*10+1)/6)  // Sum of squares formula
-
-// Specific function to sum cubes from a to b
 def sumCubes(a: Int, b: Int): Int = 
-    if (a > b) 0 else cube(a) + sumCubes(a+1,b)
+    if (a > b) 0 else cube(a) + sumCubes(a+1, b)
 
-// Tail-recursive factorial implementation for efficiency
-// @tailrec annotation ensures compiler optimization to avoid stack overflow
-// Uses accumulator pattern: multiply as we go down, not on the way back up
+assert(sumSquares(1,10) == 385)  // Sum of squares: 1² + 2² + ... + 10²
+
+// Tail-recursive factorial: efficient implementation preventing stack overflow
+// Key insight: accumulate result going DOWN the recursion, not coming back UP
 def factorial(n: Int): Int = {
-    @tailrec
+    @tailrec  // Compiler verifies and optimizes to iterative loop
     def factorialHelper(n: Int, acc: Int): Int = 
-        if (n == 0) acc else factorialHelper(n-1, n * acc)  // acc accumulates result
+        if (n == 0) acc 
+        else factorialHelper(n - 1, n * acc)  // Tail position: last operation
     
-    factorialHelper(n, 1)  // Start with accumulator = 1 (multiplicative identity)
+    factorialHelper(n, 1)  // Initialize with multiplicative identity
 }
 
 // Specific function to sum factorials from a to b
@@ -72,73 +70,75 @@ def sumFactorials(a: Int, b: Int): Int =
 
 assert(sumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
-// HIGHER-ORDER FUNCTION APPROACH
-// Generic sum function that takes a function as parameter
-// f: Int => Int means f is a function that takes Int and returns Int
-// This eliminates code duplication from the specific sum functions above
+// ============================================================================
+// PART 2: THE SOLUTION - Higher-Order Functions
+// ============================================================================
+
+// The breakthrough: parameterize the operation!
+// Instead of hardcoding square(), cube(), etc., pass the function as a parameter
 def sum(f: Int => Int, a: Int, b: Int): Int = 
     if (a > b) 0
-    else f(a) + sum(f, a + 1, b)  // Apply f to current value, recurse on rest
+    else f(a) + sum(f, a + 1, b)  // Apply f, then recurse
 
-// Identity function - returns input unchanged
-// Useful for cases where we need a function but want no transformation
+// Identity function for completeness
 def id(x: Int): Int = x 
 
-// SOLUTION: Higher-order versions using the generic sum function with named functions
-// Now we can reuse the same sum logic with different operations
-// Each function is just sum() composed with a specific mathematical function
-def hsumInts(a: Int, b: Int) = sum(id, a, b)        // sum with identity = regular sum
-def hsumSquares(a: Int, b: Int) = sum(square, a, b)  // sum with squaring
-def hsumCubes(a: Int, b: Int) = sum(cube, a, b)      // sum with cubing
-def hsumFactorials(a: Int, b: Int) = sum(factorial, a, b)  // sum with factorial
+// Now we can recreate all previous functions using the generic sum!
+def hsumInts(a: Int, b: Int) = sum(id, a, b)           // sum with identity
+def hsumSquares(a: Int, b: Int) = sum(square, a, b)    // sum with squaring  
+def hsumCubes(a: Int, b: Int) = sum(cube, a, b)        // sum with cubing
+def hsumFactorials(a: Int, b: Int) = sum(factorial, a, b) // sum with factorial
 
-// VERIFICATION: Test the higher-order versions produce same results as original functions
-// This demonstrates that refactoring preserved correctness
-assert(hsumInts(5,3) == 0)                    // Edge case: empty range
-assert(hsumInts(1,10) == (1+10)*10/2)         // Known formula verification
+// Verification: higher-order versions produce identical results
+assert(hsumInts(5,3) == 0)                    // Empty range
+assert(hsumInts(1,10) == 55)                  // Same as sumInts
+assert(hsumSquares(1,10) == 385)              // Same as sumSquares
+assert(hsumCubes(2,4) == cube(2) + cube(3) + cube(4))  // Manual verification
+assert(hsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
-assert(hsumSquares(1,10) == 10*(10+1)*(2*10+1)/6)  // Sum of squares formula
-assert(hsumCubes(2,4) == cube(2) + cube(3) + cube(4))  // Manual calculation check
-assert(hsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))  // Explicit verification
+// ============================================================================
+// PART 3: ANONYMOUS FUNCTIONS - Inline Function Definitions
+// ============================================================================
 
-// ANONYMOUS FUNCTIONS (LAMBDA EXPRESSIONS)
-// Alternative approach: define functions inline instead of naming them
-// Syntax: x => expression  means "function that takes x and returns expression"
-// Benefits: concise, no namespace pollution, clear intent at point of use
+// Why define and name simple functions? Use lambda expressions instead!
+// Syntax: parameter => expression
 
-def ahsumInts(a: Int, b: Int) = sum(x => x, a, b)  // Lambda equivalent of id function
-assert(ahsumInts(1,10) == 55)  // 1+2+...+10 = 55
+def ahsumInts(a: Int, b: Int) = sum(x => x, a, b)        // inline identity
+def ahsumSquares(a: Int, b: Int) = sum(x => x*x, a, b)   // inline squaring
+def ahsumCubes(a: Int, b: Int) = sum(x => x*x*x, a, b)   // inline cubing
+def ahsumFactorials(a: Int, b: Int) = sum(x => factorial(x), a, b) // wrap factorial
 
-def ahsumSquares(a: Int, b: Int) = sum(x=> x*x, a, b)  // Lambda equivalent of square function
-assert(ahsumSquares(1,10) == 10*(10+1)*(2*10+1)/6)
-
-def ahsumCubes(a: Int, b: Int): Int = sum(x => x*x*x, a, b)  // Lambda equivalent of cube function
+// Same results, more concise code
+assert(ahsumInts(1,10) == 55)
+assert(ahsumSquares(1,10) == 385)
 assert(ahsumCubes(2,4) == cube(2) + cube(3) + cube(4))
-
-def ahsumFactorials(a: Int, b: Int): Int = sum(x => factorial(x), a, b)  // Lambda wrapping factorial
 assert(ahsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
-// TAIL-RECURSIVE VERSION FOR BETTER PERFORMANCE
-// Generic tail-recursive sum function to avoid stack overflow for large ranges
+// ============================================================================
+// PART 4: TAIL RECURSION - Performance Optimization
+// ============================================================================
+
+// Problem: Previous sum() builds up stack frames for large ranges
+// Solution: Tail-recursive version using accumulator pattern
 def sumTailRec(f: Int => Int, a: Int, b: Int): Int = {
-    def loop(a: Int, acc: Int): Int = {
-        if (a > b) acc  
-            else loop(a+1, f(a) + acc)  // Accumulator pattern
+    @tailrec
+    def loop(current: Int, acc: Int): Int = {
+        if (current > b) acc  
+        else loop(current + 1, f(current) + acc)  // Tail position
     }
-    loop(a, 0)
+    loop(a, 0)  // Start with additive identity
 }
 
-// Tail-recursive versions using anonymous functions
+// Tail-recursive versions - same interface, better performance
 def ahtsumInts(a: Int, b: Int) = sumTailRec(x => x, a, b)
+def ahtsumSquares(a: Int, b: Int) = sumTailRec(x => x*x, a, b)
+def ahtsumCubes(a: Int, b: Int) = sumTailRec(x => x*x*x, a, b)
+def ahtsumFactorials(a: Int, b: Int) = sumTailRec(x => factorial(x), a, b)
+
+// Performance verified with same correctness
 assert(ahtsumInts(1,10) == 55)
-
-def ahtsumSquares(a: Int, b: Int) = sumTailRec(x=> x*x, a, b)
-assert(ahtsumSquares(1,10) == 10*(10+1)*(2*10+1)/6)
-
-def ahtsumCubes(a: Int, b: Int): Int = sumTailRec(x => x*x*x, a, b)
+assert(ahtsumSquares(1,10) == 385)
 assert(ahtsumCubes(2,4) == cube(2) + cube(3) + cube(4))
-
-def ahtsumFactorials(a: Int, b: Int): Int = sumTailRec(x => factorial(x), a, b)
 assert(ahtsumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
 // CURRYING EXAMPLES
@@ -176,84 +176,71 @@ def product(f: Int => Int)(a: Int, b: Int): Int =
 def formFactorial(n: Int): Int = product(x => x)(1, n)
 assert(formFactorial(5) == 5 * formFactorial(4))
 
-// MAP-REDUCE PATTERN
-// Ultimate generalization: map function f over range, then reduce with combine operation
-// Parameters:
-//   f: transformation function (Int => Int)
-//   combine: reduction function ((Int, Int) => Int) 
-//   zero: identity element for the combine operation
-// This pattern can express sum, product, min, max, and many other aggregate operations
+// ============================================================================
+// PART 5: MAP-REDUCE - Ultimate Generalization
+// ============================================================================
+
+// Why stop at sum? Let's generalize to ANY binary operation!
+// Map-Reduce pattern: transform elements (map), then combine them (reduce)
+// 
+// Algebraic structure: (Set, operation, identity) forms a monoid
+// • Associative operation: (a op b) op c = a op (b op c) 
+// • Identity element: identity op a = a op identity = a
+//
+// Examples:
+// • (Int, +, 0) - addition with zero
+// • (Int, *, 1) - multiplication with one  
+// • (Int, max, Int.MinValue) - maximum with minimum value
+
 def mapReduce(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = 
     if (a > b) zero 
     else combine(f(a), mapReduce(f, combine, zero)(a + 1, b))
 
-// Examples of mapReduce specialization:
-// Sum: mapReduce(f, (x,y) => x+y, 0)
-// Product: mapReduce(f, (x,y) => x*y, 1)
-// Max: mapReduce(f, (x,y) => if (x>y) x else y, Int.MinValue)
-
-// Product function implemented using mapReduce
-// Shows how specific operations are just mapReduce with different combine functions
-def groupProduct(f: Int => Int)(a: Int, b: Int) = mapReduce(f, (x, y) => x * y, 1)(a,b)
+// Sum and product are just special cases of mapReduce!
+def groupSum(f: Int => Int)(a: Int, b: Int) = mapReduce(f, (x, y) => x + y, 0)(a, b)
+def groupProduct(f: Int => Int)(a: Int, b: Int) = mapReduce(f, (x, y) => x * y, 1)(a, b)
 
 // Factorial using the generalized mapReduce approach
 def groupFactorial(n: Int) = groupProduct(x=>x)(1,n)
 assert(groupFactorial(5) == 120)
 
-// FIXED-POINT COMPUTATION AND NEWTON'S METHOD
-// Mathematical concept: finding x where f(x) = x
+// ============================================================================
+// PART 6: NUMERICAL COMPUTATION - Fixed-Point Iteration
+// ============================================================================
 
-// Tolerance for numerical precision - determines when we're "close enough"
-val tolerance = 0.0001
+// Mathematical concept: find x where f(x) = x (fixed point of function f)
+// Many numerical algorithms can be expressed as fixed-point problems
 
-// Absolute value function - returns positive magnitude of a number
-def abs (x: Double): Double = {
-    if x >= 0 then x else -x  // Scala 3 syntax for if-then-else
-}
+val tolerance = 0.0001  // Convergence threshold
 
-// Check if two values are sufficiently close for convergence
-// Uses relative error: |x-y|/x to handle different magnitudes
-def isCloseEnough(x: Double, y: Double) = 
-    abs((x-y) / x) / x < tolerance
+def abs(x: Double): Double = if x >= 0 then x else -x
 
-// Fixed-point algorithm: repeatedly applies function f until convergence
-// A fixed-point of f is a value x such that f(x) = x
-// Many mathematical problems can be expressed as fixed-point problems
-def fixedPoint(f: Double => Double)(firstGuess: Double) = {
+// Convergence test using relative error to handle different magnitudes
+def isCloseEnough(x: Double, y: Double): Boolean = 
+    abs((x - y) / x) < tolerance
+
+// Fixed-point iteration with average damping for stability
+def fixedPoint(f: Double => Double)(firstGuess: Double): Double = {
+    @tailrec
     def iterate(guess: Double): Double = {
-        println("guess = " + guess)  // Track convergence progress
-        //val next = f(guess)          // Apply function f to current guess
-        val next = averageDamp(f)(guess)
-        if (isCloseEnough(guess, next)) next  // Check for convergence
-        else iterate(next)                    // Continue iteration if not converged
+        val next = f(guess)  // Apply damping to prevent oscillation
+        if (isCloseEnough(guess, next)) next
+        else iterate(next)
     }
-    iterate(firstGuess)  // Start iteration with initial guess
+    iterate(firstGuess)
 }
 
-// Example: simple fixed-point convergence test
-// println(fixedPoint(x => 1 + x / 2)(1))  // Converges to 2
+// Average damping: f(x) becomes (x + f(x))/2 for better convergence
+def averageDamp(f: Double => Double)(x: Double): Double = (x + f(x)) / 2
 
-// SQUARE ROOT USING BABYLONIAN METHOD (HERON'S METHOD)
-// Mathematical insight: sqrt(x) is fixed-point of y => (y + x/y) / 2
-// This uses "average damping" - averaging current guess with x/guess
-// Prevents oscillation and ensures convergence
-def sqrt(x: Double): Double = fixedPoint(y => (y + x / y) / 2)(1)
+// Square root via fixed-point: sqrt(a) is fixed point of x => a/x
+// But x => a/x oscillates, so we use damped version: x => (x + a/x)/2
+def sqrt(a: Double): Double = fixedPoint(averageDamp(x => a / x))(1.0)
 
-// Test: square root of 16 should converge to 4
-println(sqrt(16))
-
-// AVERAGE DAMPING TECHNIQUE
-// General technique to improve convergence of fixed-point iteration
-// Instead of using f(x) directly, use (x + f(x))/2 to prevent oscillation
-// This "damps" the changes between iterations for better numerical stability
-def averageDamp(f: Double => Double)(x: Double) = (x + f(x)) / 2
-
-// Square root using average damping applied to the simple y => x/y transformation
-// Without damping: y => x/y oscillates and doesn't converge
-// With damping: y => (y + x/y)/2 converges smoothly to sqrt(x)
-def dampedSqrt(x: Double): Double = fixedPoint(y => x/y)(1)  // Uses averageDamp in fixedPoint
-println(dampedSqrt(2))    // Should converge to ~1.414
-println(dampedSqrt(144))  // Should converge to 12
+// Test convergence
+println(s"sqrt(16) = ${sqrt(16)}")     // Should be 4.0
+println(s"sqrt(2) = ${sqrt(2)}")       // Should be ~1.414
+println(s"sqrt(144) = ${sqrt(144)}")   // Should be 12.0
 
 
 
