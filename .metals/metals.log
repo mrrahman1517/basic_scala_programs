@@ -2091,3 +2091,122 @@ WARNING: Unmatched cancel notification for request id 26156
 2025.10.04 10:15:56 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
 2025.10.04 10:16:25 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
 2025.10.04 10:16:25 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 84ms
+Oct 04, 2025 10:42:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26639
+Oct 04, 2025 10:45:51 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 27648
+Oct 04, 2025 10:46:50 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 28057
+2025.10.04 10:46:51 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:46:51 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 63ms
+2025.10.04 10:49:33 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:49:33 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 62ms
+Oct 04, 2025 10:49:41 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 28378
+2025.10.04 10:50:20 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:50:20 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 69ms
+2025.10.04 10:50:30 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:50:30 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 97ms
+2025.10.04 10:52:32 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:52:32 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 10:52:49 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:52:49 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 10:52:59 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:52:59 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 10:53:06 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:53:06 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 98ms
+2025.10.04 10:53:17 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:53:17 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 84ms
+2025.10.04 10:55:02 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:55:02 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 63ms
+2025.10.04 10:55:07 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:55:07 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 60ms
+2025.10.04 10:55:20 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:55:20 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.15s
+2025.10.04 10:55:35 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:55:35 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
+2025.10.04 10:55:46 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:55:46 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 97ms
+2025.10.04 10:56:05 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:56:05 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 79ms
+2025.10.04 10:58:07 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:58:07 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 10:58:11 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:58:11 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 82ms
+2025.10.04 10:58:58 INFO  Shutting down server
+2025.10.04 10:58:58 INFO  shutting down Metals
+2025.10.04 10:58:58 INFO  Shut down connection with build server.
+2025.10.04 10:58:58 INFO  Shut down connection with build server.
+2025.10.04 10:58:58 INFO  Shut down connection with build server.
+2025.10.04 10:58:58 INFO  Shut down connection with build server.
+2025.10.04 10:58:58 INFO  Shut down connection with build server.
+2025.10.04 10:58:58 INFO  Exiting server
+2025.10.04 10:59:06 INFO  Started: Metals version 1.6.2 in folders '/Users/muntasirraihanrahman/Documents/ScalaFP' for client Visual Studio Code 1.104.3.
+2025.10.04 10:59:06 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.10.04 10:59:06 INFO  Attempting to connect to the build server...
+2025.10.04 10:59:06 INFO  Found a Bloop server running
+2025.10.04 10:59:06 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.04 10:59:06 INFO  Attempting to connect to the build server...
+2025.10.04 10:59:06 INFO  Found a Bloop server running
+2025.10.04 10:59:06 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/project/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.04 10:59:06 INFO  time: Connected to build server in 0.31s
+2025.10.04 10:59:06 INFO  Connected to Build server: Bloop v2.0.13
+2025.10.04 10:59:07 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:07 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:08 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+Oct 04, 2025 10:59:08 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5
+Oct 04, 2025 10:59:08 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2025.10.04 10:59:07 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:09 INFO  time: indexed workspace in 2.26s
+2025.10.04 10:59:10 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc
+2025.10.04 10:59:10 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc
+2025.10.04 10:59:10 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:10 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:10 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:10 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:10 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:10 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:11 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli17788919770015155146, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc)
+2025.10.04 10:59:11 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli17788919770015155146, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc)
+2025.10.04 10:59:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.04 10:59:11 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.04 10:59:11 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:11 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:12 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.04 10:59:13 INFO  Connected to Scala CLI server v1.8.4
+2025.10.04 10:59:13 INFO  Connected to Scala CLI server v1.8.4
+2025.10.04 10:59:13 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-5dae987017 (1 scala source)
+2025.10.04 10:59:13 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:59:13 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-5dae987017 in 0.13s
+2025.10.04 10:59:13 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-5dae987017 (1 scala source)
+2025.10.04 10:59:13 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-5dae987017 in 89ms
+2025.10.04 10:59:14 INFO  time: indexed workspace in 0.98s
+2025.10.04 10:59:14 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc
+2025.10.04 10:59:15 INFO  time: indexed workspace in 0.76s
+2025.10.04 10:59:14 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc
+2025.10.04 11:00:45 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:00:45 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 11:00:50 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:00:50 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 95ms
+2025.10.04 11:04:00 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:04:00 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 11:04:21 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:04:21 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 94ms
+2025.10.04 11:04:34 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:04:34 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.11s
+2025.10.04 11:05:30 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:05:30 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 11:05:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/demo.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.04 11:05:38 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli17788919770015155146, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/demo.sc)
+2025.10.04 11:05:38 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.04 11:05:40 INFO  Connected to Scala CLI server v1.8.4
+2025.10.04 11:05:41 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-8573141b36 (1 scala source)
+2025.10.04 11:05:41 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-8573141b36 in 0.12s
+2025.10.04 11:05:40 INFO  time: indexed workspace in 0.76s
+2025.10.04 11:05:41 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/demo.sc
+2025.10.04 11:06:03 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:06:03 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 11:06:22 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:06:22 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 98ms
