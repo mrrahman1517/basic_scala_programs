@@ -97,4 +97,10 @@ def currySum(f: Int => Int): (Int, Int) => Int = {
 
 assert(currySum(x=>x*x)(1,3) == square(1) + square(2) + square(3))
 
+def sugarCurrySum(f: Int => Int)(a: Int, b: Int): Int = 
+    if (a >b) 0 else f(a) + sugarCurrySum(f)(a+1,b)
+
+assert(sugarCurrySum(x=>x*x)(1,3) == square(1) + square(2) + square(3))
+
+
 
