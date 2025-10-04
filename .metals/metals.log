@@ -2049,3 +2049,45 @@ WARNING: Unmatched cancel notification for request id 22249
 2025.10.04 09:49:12 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
 2025.10.04 09:49:27 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
 2025.10.04 09:49:27 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+Oct 04, 2025 10:00:17 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 23247
+2025.10.04 10:01:20 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:01:20 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.14s
+2025.10.04 10:01:42 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:01:42 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 98ms
+2025.10.04 10:02:01 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:02:01 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 10:04:45 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:04:45 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 10:04:53 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:04:53 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
+Oct 04, 2025 10:05:54 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 24089
+2025.10.04 10:07:13 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:07:13 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 58ms
+Oct 04, 2025 10:09:02 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25050
+2025.10.04 10:09:06 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:09:06 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
+Oct 04, 2025 10:09:21 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25121
+Oct 04, 2025 10:09:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25426
+Oct 04, 2025 10:10:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25490
+2025.10.04 10:10:50 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:10:50 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.1s
+Oct 04, 2025 10:11:03 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 25726
+Oct 04, 2025 10:11:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26052
+2025.10.04 10:11:48 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:11:48 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 90ms
+2025.10.04 10:13:19 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:13:19 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
+Oct 04, 2025 10:15:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 26156
+2025.10.04 10:15:56 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:15:56 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 0.11s
+2025.10.04 10:16:25 INFO  compiling metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 10:16:25 INFO  time: compiled metals-scala-cli11195507333290792438_a020a4fc86-ec83f5da22 in 84ms

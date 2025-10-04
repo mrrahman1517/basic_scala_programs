@@ -108,6 +108,24 @@ def sugarCurrySum(f: Int => Int)(a: Int, b: Int): Int =
 
 assert(sugarCurrySum(x=>x*x)(1,3) == square(1) + square(2) + square(3))
 
+def product(f: Int => Int)(a: Int, b: Int): Int = 
+    if (a > b) 1 else f(a) * product(f)(a+1, b)
+
+def formFactorial(n: Int): Int = product(x => x)(1, n)
+
+assert(formFactorial(5) == 5 * formFactorial(4))
+
+def mapReduce(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = 
+    if (a > b) zero 
+    else combine(f(a), mapReduce(f, combine, zero)(a + 1, b))
+
+def groupProduct(f: Int => Int)(a: Int, b: Int) = mapReduce(f, (x,y)=>x*y, 1)(a,b)
+
+def groupFactorial(n: Int) = groupProduct(x=>x)(1,n)
+
+assert(groupFactorial(5) == 120)
+
+
 
 
 
