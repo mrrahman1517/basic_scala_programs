@@ -2210,3 +2210,25 @@ WARNING: Unmatched cancel notification for request id 2
 2025.10.04 11:06:03 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
 2025.10.04 11:06:22 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
 2025.10.04 11:06:22 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 98ms
+2025.10.04 11:09:05 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:09:05 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 11:10:10 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:10:10 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 97ms
+Oct 04, 2025 11:10:33 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1508
+2025.10.04 11:10:49 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:10:49 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 0.1s
+2025.10.04 11:10:59 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:10:59 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 94ms
+Oct 04, 2025 11:11:10 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1802
+Oct 04, 2025 11:11:12 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1841
+2025.10.04 11:11:15 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:11:15 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 92ms
+2025.10.04 11:11:19 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:11:19 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 89ms
+2025.10.04 11:11:28 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:11:28 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 90ms
+2025.10.04 11:12:50 INFO  compiling metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.04 11:12:50 INFO  time: compiled metals-scala-cli17788919770015155146_a020a4fc86-ec83f5da22 in 99ms

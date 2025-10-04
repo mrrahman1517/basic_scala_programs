@@ -10,6 +10,8 @@ def scriptPath = """/Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc"""
 import scala.annotation.tailrec
 
 // Basic recursive function to sum integers from a to b
+// Pattern: if range empty (a > b) return base case (0)
+//          else add current value (a) to sum of rest (a+1 to b)
 def sumInts(a: Int, b: Int): Int = 
     if (a >b) 0 else a + sumInts(a+1,b)
 
@@ -32,12 +34,14 @@ def sumCubes(a: Int, b: Int): Int =
     if (a > b) 0 else cube(a) + sumCubes(a+1,b)
 
 // Tail-recursive factorial implementation for efficiency
+// @tailrec annotation ensures compiler optimization to avoid stack overflow
+// Uses accumulator pattern: multiply as we go down, not on the way back up
 def factorial(n: Int): Int = {
     @tailrec
     def factorialHelper(n: Int, acc: Int): Int = 
-        if (n == 0) acc else factorialHelper(n-1, n * acc)
+        if (n == 0) acc else factorialHelper(n-1, n * acc)  // acc accumulates result
     
-    factorialHelper(n, 1)
+    factorialHelper(n, 1)  // Start with accumulator = 1 (multiplicative identity)
 }
 
 // Specific function to sum factorials from a to b
@@ -48,10 +52,11 @@ assert(sumFactorials(1,3) == factorial(1) + factorial(2) + factorial(3))
 
 // HIGHER-ORDER FUNCTION APPROACH
 // Generic sum function that takes a function as parameter
+// f: Int => Int means f is a function that takes Int and returns Int
 // This eliminates code duplication from the specific sum functions above
 def sum(f: Int => Int, a: Int, b: Int): Int = 
     if (a > b) 0
-    else f(a) + sum(f, a + 1, b)
+    else f(a) + sum(f, a + 1, b)  // Apply f to current value, recurse on rest
 
 // Identity function - returns input unchanged
 def id(x: Int): Int = x 
@@ -127,6 +132,7 @@ assert(sugarCurrySum(x=>x*x)(1,3) == square(1) + square(2) + square(3))
 
 // PRODUCT FUNCTION - GENERALIZATION BEYOND SUMMATION
 // Higher-order function for multiplication instead of addition
+// Note: base case is 1 (multiplicative identity) vs 0 for sum (additive identity)
 def product(f: Int => Int)(a: Int, b: Int): Int = 
     if (a > b) 1 else f(a) * product(f)(a+1, b)  // Base case is 1 (multiplicative identity)
 
@@ -147,31 +153,53 @@ def groupProduct(f: Int => Int)(a: Int, b: Int) = mapReduce(f, (x, y) => x * y, 
 def groupFactorial(n: Int) = groupProduct(x=>x)(1,n)
 assert(groupFactorial(5) == 120)
 
+// FIXED-POINT COMPUTATION AND NEWTON'S METHOD
+// Mathematical concept: finding x where f(x) = x
+
+// Tolerance for numerical precision - determines when we're "close enough"
 val tolerance = 0.0001
 
+// Absolute value function - returns positive magnitude of a number
 def abs (x: Double): Double = {
-    if x >= 0 then x else -x
+    if x >= 0 then x else -x  // Scala 3 syntax for if-then-else
 }
 
+// Check if two values are sufficiently close for convergence
+// Uses relative error: |x-y|/x to handle different magnitudes
 def isCloseEnough(x: Double, y: Double) = 
     abs((x-y) / x) / x < tolerance
 
+// Fixed-point algorithm: repeatedly applies function f until convergence
+// A fixed-point of f is a value x such that f(x) = x
+// Many mathematical problems can be expressed as fixed-point problems
 def fixedPoint(f: Double => Double)(firstGuess: Double) = {
     def iterate(guess: Double): Double = {
-        println("guess = " + guess)
-        val next = f(guess)
-        //println(next)
-        if (isCloseEnough(guess, next)) next
-        else iterate(next)
+        println("guess = " + guess)  // Track convergence progress
+        //val next = f(guess)          // Apply function f to current guess
+        val next = averageDamp(f)(guess)
+        if (isCloseEnough(guess, next)) next  // Check for convergence
+        else iterate(next)                    // Continue iteration if not converged
     }
-    iterate(firstGuess)
+    iterate(firstGuess)  // Start iteration with initial guess
 }
 
-//println(fixedPoint(x => 1 + x / 2)(1))
+// Example: simple fixed-point convergence test
+// println(fixedPoint(x => 1 + x / 2)(1))  // Converges to 2
 
+// SQUARE ROOT USING BABYLONIAN METHOD (HERON'S METHOD)
+// Mathematical insight: sqrt(x) is fixed-point of y => (y + x/y) / 2
+// This uses "average damping" - averaging current guess with x/guess
+// Prevents oscillation and ensures convergence
 def sqrt(x: Double): Double = fixedPoint(y => (y + x / y) / 2)(1)
 
+// Test: square root of 16 should converge to 4
 println(sqrt(16))
+
+def averageDamp(f: Double => Double)(x: Double) = (x + f(x)) / 2
+
+def dampedSqrt(x: Double): Double = fixedPoint(y => x/y)(1)
+println(dampedSqrt(2))
+println(dampedSqrt(144))
 
 
 
