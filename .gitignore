@@ -1,0 +1,33 @@
+# Scala and SBT build artifacts
+target/
+project/target/
+project/project/target/
+
+# Scala-CLI build artifacts
+.scala-build/
+
+# Metals IDE files
+.metals/
+.bloop/
+
+# Compiled class files
+*.class
+*.tasty
+
+# Log files
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

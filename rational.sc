@@ -21,6 +21,7 @@
  * @param x numerator (Int)
  * @param y denominator (Int) - must be non-zero
  */
+
 class Rational(x: Int, y: Int) {
     require(y != 0, "denominator must be non zero")  // Precondition check - contract programming
 
