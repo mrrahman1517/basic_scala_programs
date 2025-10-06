@@ -3197,3 +3197,53 @@ WARNING: Unmatched cancel notification for request id 17111
 2025.10.06 10:20:58 INFO  skipping build import with status 'Installed'
 2025.10.06 10:20:58 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
 2025.10.06 10:23:03 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:25:45 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:25:45 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:25:45 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:25:45 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:26:41 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:26:41 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:26:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:26:41 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:33:14 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:33:14 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 80ms
+2025.10.06 10:33:28 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:33:28 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 79ms
+Oct 06, 2025 10:33:43 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18074
+2025.10.06 10:33:45 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:33:45 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 75ms
+2025.10.06 10:33:51 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:33:51 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 75ms
+Oct 06, 2025 10:33:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18173
+2025.10.06 10:33:57 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:33:57 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 75ms
+Oct 06, 2025 10:34:08 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18227
+2025.10.06 10:34:11 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:34:11 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 68ms
+2025.10.06 10:34:19 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:34:19 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 74ms
+2025.10.06 10:34:26 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:34:26 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 71ms
+2025.10.06 10:34:33 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:34:33 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 80ms
+2025.10.06 10:35:00 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:35:00 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 69ms
+2025.10.06 10:35:22 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:35:22 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 59ms
+2025.10.06 10:35:43 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:35:43 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 0.11s
+2025.10.06 10:36:08 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:36:08 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 63ms
+2025.10.06 10:36:16 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:36:16 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 0.11s
+Oct 06, 2025 10:36:32 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19223
+Oct 06, 2025 10:36:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 19268
+2025.10.06 10:37:28 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:37:28 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 0.12s
+2025.10.06 10:38:18 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:38:18 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 0.13s

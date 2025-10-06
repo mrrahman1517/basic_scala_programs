@@ -2,33 +2,37 @@ abstract class IntSet {
     def incl(x: Int): IntSet
     def contains(x: Int): Boolean
     def union(other: IntSet): IntSet
+    def size(): Int 
 }
 
 object Empty extends IntSet {
-    override def contains(x: Int): Boolean = false
-    override def incl(x: Int): IntSet = new NonEmpty(x, Empty, Empty)
-    override def union(other: IntSet): IntSet = other
+    def contains(x: Int): Boolean = false
+    def incl(x: Int): IntSet = new NonEmpty(x, Empty, Empty)
+    def union(other: IntSet): IntSet = other
     override def toString: String = "."
+    def size(): Int = 0
 }
 
 class NonEmpty(elem: Int, left: IntSet, right: IntSet) extends IntSet { 
-    override def contains(x: Int): Boolean = {
+    def contains(x: Int): Boolean = {
         if (x == elem) then true
         else  if (x < elem) then left.contains(x)
         else right.contains(x)
     }
 
-    override def incl(x: Int): IntSet = {
+    def incl(x: Int): IntSet = {
         if (x < elem) then new NonEmpty(elem, left.incl(x), right)
         else if ( x > elem) then new NonEmpty(elem, left, right.incl(x))
         else this
     }
     
-    override def union(other: IntSet): IntSet = {
+    def union(other: IntSet): IntSet = {
         ((left.union(right)).union(other)).incl(elem)
     }
     
     override def toString: String = "{" + left + elem + right + "}"
+
+    def size(): Int = left.size() + right.size() + 1
 }
 
 // ============================================================================
@@ -149,3 +153,23 @@ searchElements.foreach { elem =>
     val found = largeTree.contains(elem)
     println(s"contains($elem) = $found")
 }
+
+val t1 = new NonEmpty(3, Empty, Empty)
+val t2 = t1.incl(4)
+assert(t2.contains(4))
+//assert(t1.contains(4))
+println(t1.toString())
+println("size of t1: " + t1.size())
+println(t2.toString())
+println("size of t2: " + t2.size())
+val t3 = t2.incl(1)
+println(t3.toString())
+println("size of t3: " + t3.size())
+val t4 = t3.incl(10)
+println(t4.toString())
+println("size of t4: " + t4.size())
+val t5 = t4.incl(0)
+println(t5.toString())
+println("size of t5: " + t5.size())
+assert(Empty.size() == 0)
+
