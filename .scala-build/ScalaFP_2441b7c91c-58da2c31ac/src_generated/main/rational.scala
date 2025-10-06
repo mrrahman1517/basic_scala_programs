@@ -1,3 +1,9 @@
+
+
+final class rational$_ {
+def args = rational_sc.args$
+def scriptPath = """/Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc"""
+/*<script>*/
 /**
  * Rational Number Implementation in Scala
  * =======================================
@@ -233,3 +239,26 @@ assert((i + j) == k)        // Test: 5/1 + 7/1 = 12/1
 // Constructor should automatically reduce fractions to lowest terms
 val r4 = new Rational(12,3)  // Should automatically become 4/1
 println("r4: " + r4)         // Should display "4/1" not "12/3"
+/*</script>*/ /*<generated>*//*</generated>*/
+}
+
+object rational_sc {
+  private var args$opt0 = Option.empty[Array[String]]
+  def args$set(args: Array[String]): Unit = {
+    args$opt0 = Some(args)
+  }
+  def args$opt: Option[Array[String]] = args$opt0
+  def args$: Array[String] = args$opt.getOrElse {
+    sys.error("No arguments passed to this script")
+  }
+
+  lazy val script = new rational$_
+
+  def main(args: Array[String]): Unit = {
+    args$set(args)
+    val _ = script.hashCode() // hashCode to clear scalac warning about pure expression in statement position
+  }
+}
+
+export rational_sc.script as `rational`
+
