@@ -155,6 +155,19 @@ searchElements.foreach { elem =>
     val found = largeTree.contains(elem)
     println(s"contains($elem) = $found")
 }
+
+val t1 = new NonEmpty(3, new Empty, new Empty)
+val t2 = t1 `incl` 4
+assert(t2 `contains` 4)
+//assert(t1 `contains` 4)
+println(t1.toString())
+println(t2.toString())
+val t3 = t2 `incl` 1
+println(t3.toString())
+val t4 = t3 `incl` 10
+println(t4.toString())
+val t5 = t4 `incl` 0
+println(t5.toString())
 /*</script>*/ /*<generated>*//*</generated>*/
 }
 

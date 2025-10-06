@@ -2821,3 +2821,85 @@ WARNING: Unmatched cancel notification for request id 12764
 2025.10.06 08:43:46 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 1ms
 2025.10.06 08:43:46 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
 2025.10.06 08:43:46 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc
+Oct 06, 2025 8:55:19 AM scala.meta.internal.metals.Docstrings indexSymbol
+SEVERE: file:///Users/muntasirraihanrahman/Documents/ScalaFP/classhierarchy.sc
+java.nio.file.NoSuchFileException: /Users/muntasirraihanrahman/Documents/ScalaFP/classhierarchy.sc
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3288)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:466)
+	at scala.meta.internal.metals.Docstrings.indexSymbolDefinition(Docstrings.scala:177)
+	at scala.meta.internal.metals.Docstrings.indexSymbol(Docstrings.scala:141)
+	at scala.meta.internal.metals.Docstrings.documentation(Docstrings.scala:49)
+	at scala.meta.internal.metals.MetalsSymbolSearch.documentation(MetalsSymbolSearch.scala:51)
+	at dotty.tools.pc.utils.InteractiveEnrichments$.symbolDocumentation(InteractiveEnrichments.scala:286)
+	at dotty.tools.pc.CompletionItemResolver$.resolve(CompletionItemResolver.scala:29)
+	at dotty.tools.pc.ScalaPresentationCompiler.completionItemResolve$$anonfun$1(ScalaPresentationCompiler.scala:296)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:149)
+	at scala.meta.internal.pc.CompilerAccess.withNonInterruptableCompiler$$anonfun$1(CompilerAccess.scala:133)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:210)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Oct 06, 2025 8:55:25 AM scala.meta.internal.metals.Docstrings indexSymbol
+SEVERE: file:///Users/muntasirraihanrahman/Documents/ScalaFP/classhierarchy.sc
+java.nio.file.NoSuchFileException: /Users/muntasirraihanrahman/Documents/ScalaFP/classhierarchy.sc
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3288)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:42)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:18)
+	at scala.meta.internal.mtags.ScalametaCommonEnrichments$XtensionAbsolutePath.toInput(ScalametaCommonEnrichments.scala:466)
+	at scala.meta.internal.metals.Docstrings.indexSymbolDefinition(Docstrings.scala:177)
+	at scala.meta.internal.metals.Docstrings.indexSymbol(Docstrings.scala:141)
+	at scala.meta.internal.metals.Docstrings.documentation(Docstrings.scala:49)
+	at scala.meta.internal.metals.MetalsSymbolSearch.documentation(MetalsSymbolSearch.scala:51)
+	at dotty.tools.pc.utils.InteractiveEnrichments$.symbolDocumentation(InteractiveEnrichments.scala:286)
+	at dotty.tools.pc.CompletionItemResolver$.resolve(CompletionItemResolver.scala:29)
+	at dotty.tools.pc.ScalaPresentationCompiler.completionItemResolve$$anonfun$1(ScalaPresentationCompiler.scala:296)
+	at scala.meta.internal.pc.CompilerAccess.withSharedCompiler(CompilerAccess.scala:149)
+	at scala.meta.internal.pc.CompilerAccess.withNonInterruptableCompiler$$anonfun$1(CompilerAccess.scala:133)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:210)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:153)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+2025.10.06 08:55:49 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 08:55:49 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.13s
+2025.10.06 08:56:04 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 08:56:04 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
+2025.10.06 08:57:08 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 08:57:08 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.12s
+2025.10.06 08:57:26 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 08:57:26 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.12s
+Oct 06, 2025 8:57:44 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 14467
+2025.10.06 08:57:55 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 08:57:55 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
+2025.10.06 08:58:06 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 08:58:06 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 93ms
+2025.10.06 09:00:05 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 09:00:05 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.12s
+2025.10.06 09:00:49 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 09:00:49 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.17s
+2025.10.06 09:01:23 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 09:01:23 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
+2025.10.06 09:01:53 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 09:01:53 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
+Oct 06, 2025 9:02:03 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15634
+2025.10.06 09:02:05 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 09:02:05 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
