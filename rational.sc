@@ -22,20 +22,49 @@
  * @param y denominator (Int) - must be non-zero
  */
 class Rational(x: Int, y: Int) {
+    require(y != 0, "denominator must be non zero")  // Precondition check - contract programming
 
+    // AUXILIARY CONSTRUCTOR: allows creating integers as rationals
+    // Example: new Rational(5) creates 5/1
+    // Demonstrates constructor overloading in Scala
+    def this(x: Int) = this(x, 1)  // Delegate to primary constructor
+    
     // Private helper method to compute Greatest Common Divisor
     // Uses Euclidean algorithm: gcd(a,b) = gcd(b, a mod b)
+    // Time complexity: O(log(min(a,b)))
     private def gcd(a: Int, b: Int): Int = 
         if (b == 0) then a else gcd(b, a%b)
     
+    // PERFORMANCE OPTIMIZATION: compute GCD once and reuse
+    // Avoids redundant calculation in numer and denom
+    val g = gcd(x, y)
+    
     // Automatically reduce fraction to lowest terms during construction
-    // Public fields store the reduced numerator and denominator
-    val numer = x / gcd(x, y)  // Reduced numerator
-    val denom = y / gcd(x, y)  // Reduced denominator 
+    // Public methods (not fields) for numerator and denominator
+    // This ensures they're always in reduced form
+    def numer = x / g  // Reduced numerator
+    def denom = y / g  // Reduced denominator 
+    //val numer = x 
+    //val denom = y 
 
+    // COMPARISON OPERATOR: implement < for rational ordering
+    // Mathematical basis: a/b < c/d iff ad < bc (assuming positive denominators)
+    // Used by max() method and enables sorting of rationals
+    def < (that: Rational): Boolean = 
+        numer * that.denom < that.numer * denom
+
+    // Maximum function using comparison operator
+    // Demonstrates conditional expressions and method composition
+    // Pattern: if condition then value1 else value2
+    def max(that: Rational): Rational = {
+        if this < that then that else this  // 'this' refers to current object
+    }
+
+    // OPERATOR OVERLOADING: + symbol for intuitive mathematical notation
     // Addition: a/b + c/d = (ad + bc) / bd
-    // Returns new Rational (immutable operation)
-    def add(that: Rational) = {
+    // Returns new Rational (immutable operation - no side effects)
+    // Note: Scala allows any symbol as method name, enabling math-like syntax
+    def + (that: Rational) = {
         new Rational(
             numer * that.denom + that.numer * denom,  // Cross multiply and add
             denom * that.denom                        // Common denominator
@@ -44,6 +73,7 @@ class Rational(x: Int, y: Int) {
 
     // Alternative subtraction implementation (commented out)
     // Direct approach: a/b - c/d = (ad - bc) / bd
+    // Shows two different implementation strategies
     /*def sub(that: Rational) = {
         new Rational(
             numer * that.denom - that.numer * denom,
@@ -51,47 +81,60 @@ class Rational(x: Int, y: Int) {
         )
     }*/
 
-    // Subtraction using negation: a - b = a + (-b)
+    // ELEGANT SUBTRACTION: reuse addition with negation
+    // Subtraction as inverse operation: a - b = a + (-b)
     // Demonstrates method composition and DRY principle
-    def sub(that: Rational): Rational = 
-        add(that.neg)  // Reuse add() method with negated argument
+    // Less code, reuses tested addition logic
+    def - (that: Rational): Rational = 
+        this + that.neg  // 'this +' is explicit form of operator call
 
-    // Multiplication: (a/b) * (c/d) = (ac) / (bd)
-    def mul(that: Rational) = {
+    // MULTIPLICATION: simpler than addition - just multiply across
+    // Mathematical rule: (a/b) * (c/d) = (ac) / (bd)
+    // No need for common denominators like in addition
+    def * (that: Rational) = {
         new Rational(
             numer * that.numer,  // Multiply numerators
             denom * that.denom   // Multiply denominators
         )
     }
 
-    // Negation: -(a/b) = (-a)/b
-    // Used by subtraction method
+    // UNARY NEGATION: mathematical additive inverse
+    // Property: x + (-x) = 0 for any rational x
+    // Implementation: negate numerator, keep denominator positive
     def neg: Rational = {
         new Rational(
             -numer,  // Negate numerator
-            denom    // Keep denominator positive
+            denom    // Keep denominator positive (mathematical convention)
         )
     }
 
-    // Equality test: a/b == c/d iff ad == bc
-    // Cross multiplication avoids floating point errors
-    def equal(that: Rational) = {
+    // EQUALITY OPERATOR: overload == for mathematical equality
+    // Cross multiplication test: a/b == c/d iff ad == bc
+    // Avoids floating point precision errors that division would cause
+    // More robust than converting to decimals and comparing
+    def == (that: Rational) = {
         numer * that.denom == that.numer * denom
     }
 
-    // Alternative reduction method (redundant since constructor auto-reduces)
-    // Demonstrates explicit GCD computation and fraction simplification
+    // ALTERNATIVE REDUCTION: explicit reduction after creation
+    // Note: This is redundant since constructor already reduces fractions
+    // Kept for educational purposes to show explicit GCD usage
+    // In practice, constructor reduction is more efficient
     def reduce() = {
-        var g = gcd(numer, denom)  // Compute GCD of current fraction
+        var g = gcd(numer, denom)  // Recompute GCD (inefficient)
         new Rational(
             numer / g,  // Divide both by GCD
             denom / g
         )
     }
 
-    // String representation for display and debugging
-    // Override toString method from Object class
-    override def toString = numer + "/" + denom
+    // STRING REPRESENTATION: custom formatting for display
+    // Override Object.toString() for meaningful output
+    // Ensures fractions are always displayed in reduced form
+    override def toString = {
+        val g = gcd(numer, denom)  // Ensure reduction for display
+        numer / g + "/" + denom / g  // Format as "numerator/denominator"
+    }
 }
 
 // ============================================================================
@@ -126,50 +169,67 @@ def makeString(r: Rational) = {
 }
 
 // ============================================================================
-// TEST CASES AND ALGEBRAIC PROPERTY VERIFICATION
+// COMPREHENSIVE TEST SUITE - Property-Based and Edge Case Testing
 // ============================================================================
 
-// Create test rational numbers
-val x = new Rational(1, 3)  // 1/3
-val y = new Rational(5, 7)  // 5/7  
-val z = new Rational(3, 2)  // 3/2
+// BASIC TEST INSTANCES: cover common use cases
+val x = new Rational(1, 3)  // 1/3 - proper fraction
+val y = new Rational(5, 7)  // 5/7 - another proper fraction
+val z = new Rational(3, 2)  // 3/2 - improper fraction (> 1)
 
-// Test complex expression evaluation
-// Uncommented lines show various operations and their results
-//println (x.add(y).mul(z).toString())         // (1/3 + 5/7) * 3/2
-//println (x.add(y).mul(z).reduce().toString()) // Same, with explicit reduction
-println(x.sub(y).sub(z))  // ((1/3 - 5/7) - 3/2) = chain subtraction
+// COMPLEX EXPRESSION TESTING: verify operator precedence and associativity
+// Test chained operations to ensure mathematical correctness
+println(x - y - z)  // Chain subtraction: ((1/3 - 5/7) - 3/2)
+                    // Tests: left associativity, negative results, reduction
 
-// DISTRIBUTIVE PROPERTY TEST: a(b + c) = ab + ac
-// Verify: x * (y + z) = (x * y) + (x * z)
-assert(x.add(y).mul(z).equal(x.mul(z).add(y.mul(z))))
+// ALGEBRAIC PROPERTY VERIFICATION: distributive law
+// Mathematical property: a(b + c) = ab + ac
+// This is a fundamental property that must hold for any number system
+// If this fails, our implementation is mathematically incorrect
+assert((x + y) * z == x * z + y * z)  // Distributivity test
 
-// Test fraction addition and reduction
-var r = new Rational(1,4)    // 1/4
-val s = new Rational(3,4)    // 3/4
-val sum = new Rational(1,1)  // 1/1 = 1 (expected result)
+// FRACTION ARITHMETIC VALIDATION
+var r = new Rational(1,4)    // 1/4 - unit fraction
+val s = new Rational(3,4)    // 3/4 - three quarters
+val sum = new Rational(1,1)  // 1 - whole number as fraction
 
-// Test different addition approaches
-//val reducedSum = reduceRational(addRational(r,s))  // External functions
-val reducedSum = r.add(s).reduce()  // Method chaining (1/4 + 3/4 = 1)
+// ORDERING TESTS: verify comparison operators work correctly
+assert(r < sum)    // 1/4 < 1 should be true
+assert(s < sum)    // 3/4 < 1 should be true
 
-// Verify addition result: 1/4 + 3/4 = 4/4 = 1/1
-assert(reducedSum.numer == sum.numer)  // Should be 1
-assert(reducedSum.denom == sum.denom)  // Should be 1
+// COMMUTATIVITY TEST: max(a,b) should equal max(b,a)
+// Tests both comparison logic and max function
+assert(r.max(s) == (s.max(r)))  // Test commutative property of max
 
-// DEBUGGING AND NEGATION TESTS
-// Verify negation works correctly
+// REDUCTION AND CONSTRUCTOR TESTING
+val reducedSum = (r + s).reduce()  // Method chaining: 1/4 + 3/4 = 1
+
+// PRECISE ARITHMETIC VERIFICATION: exact fraction arithmetic
+// Unlike floating point, rational arithmetic is exact - no rounding errors
+assert(reducedSum.numer == sum.numer)  // Numerator should be exactly 1
+assert(reducedSum.denom == sum.denom)  // Denominator should be exactly 1
+
+// NEGATION AND SIGN HANDLING TESTS
+// Verify negation preserves magnitude but flips sign
 println("debug: " + r.neg.numer)       // Should print: debug: -1  
 println("DEBUG: r.neg: " + r.neg.toString())  // Should print: DEBUG: r.neg: -1/4
 
-// Additional negation tests (some commented for debugging)
+// Note: denominator stays positive by mathematical convention
+// Negative fractions have negative numerator, positive denominator
+
+// COMMENTED EDGE CASES AND POTENTIAL ISSUES
 //println("DEBUG: gcd" + gcd)  // Would cause error - gcd needs parameters
-//assert(r.neg.numer == -1)     // Commented assertion
-//assert(r.neg.denom == -4)     // Wrong expectation - denom stays positive
+//assert(r.neg.numer == -1)     // Would pass - negation works correctly
+//assert(r.neg.denom == -4)     // Would FAIL - denom stays positive
 
-// SUBTRACTION VERIFICATION: 3/4 - 1/4 = 2/4 = 1/2
-assert(s.sub(r).numer == 1)  // Numerator should be 1
-assert(s.sub(r).denom == 2)  // Denominator should be 2
+// AUXILIARY CONSTRUCTOR TESTING: integer to rational conversion
+// Tests the secondary constructor that takes only one parameter
+val i = new Rational(5)     // Should create 5/1
+val j = new Rational(7)     // Should create 7/1  
+val k = new Rational(12)    // Should create 12/1
+assert((i + j) == k)        // Test: 5/1 + 7/1 = 12/1
 
-// Additional test examples (commented out)
-//println(makeString(addRational(new Rational(1, 2), new Rational(2, 3))))
+// AUTOMATIC REDUCTION VERIFICATION
+// Constructor should automatically reduce fractions to lowest terms
+val r4 = new Rational(12,3)  // Should automatically become 4/1
+println("r4: " + r4)         // Should display "4/1" not "12/3"

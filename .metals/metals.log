@@ -2506,3 +2506,214 @@ WARNING: Unmatched cancel notification for request id 13874
 2025.10.05 09:46:48 INFO  compiling metals-scala-cli2808905010051637371_a020a4fc86-58da2c31ac (1 scala source)
 2025.10.05 09:46:48 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
 2025.10.05 09:46:48 INFO  time: compiled metals-scala-cli2808905010051637371_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 09:47:29 INFO  Shutting down server
+2025.10.05 09:47:29 INFO  shutting down Metals
+2025.10.05 09:47:29 INFO  Shut down connection with build server.
+2025.10.05 09:47:29 INFO  Shut down connection with build server.
+2025.10.05 09:47:29 INFO  Shut down connection with build server.
+2025.10.05 09:47:29 INFO  Shut down connection with build server.
+2025.10.05 09:47:29 INFO  Shut down connection with build server.
+2025.10.05 09:47:29 INFO  Exiting server
+2025.10.05 10:33:38 INFO  Started: Metals version 1.6.2 in folders '/Users/muntasirraihanrahman/Documents/ScalaFP' for client Visual Studio Code 1.104.3.
+2025.10.05 10:33:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc. Using presentation compiler with project's scala-library version: 3.3.6
+2025.10.05 10:33:40 INFO  Attempting to connect to the build server...
+2025.10.05 10:33:40 INFO  Found a Bloop server running
+2025.10.05 10:33:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.05 10:33:40 INFO  Attempting to connect to the build server...
+2025.10.05 10:33:40 INFO  Found a Bloop server running
+2025.10.05 10:33:40 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/project/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.05 10:33:40 INFO  time: Connected to build server in 0.41s
+2025.10.05 10:33:40 INFO  Connected to Build server: Bloop v2.0.13
+2025.10.05 10:33:40 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc. Using presentation compiler with project's scala-library version: 2.13.16
+Oct 05, 2025 10:33:40 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+Oct 05, 2025 10:33:40 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+2025.10.05 10:33:40 WARN  2.13.12 is no longer supported in the current Metals versions, using the last known supported version 1.4.2
+2025.10.05 10:33:42 INFO  time: indexed workspace in 2.02s
+2025.10.05 10:33:42 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc
+2025.10.05 10:33:42 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc
+2025.10.05 10:33:42 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc
+2025.10.05 10:33:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.05 10:33:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.05 10:33:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.05 10:33:43 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli14745222040128228695, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc)
+2025.10.05 10:33:43 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli14745222040128228695, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc)
+2025.10.05 10:33:43 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli14745222040128228695, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc)
+2025.10.05 10:33:43 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.05 10:33:43 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.05 10:33:43 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.05 10:33:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.05 10:33:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.05 10:33:44 INFO  time: code lens generation in 1.44s
+2025.10.05 10:33:44 INFO  time: code lens generation in 1.44s
+2025.10.05 10:33:44 INFO  time: code lens generation in 1.05s
+2025.10.05 10:33:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc. Using presentation compiler with project's scala-library version: 2.13.16
+2025.10.05 10:33:46 INFO  Connected to Scala CLI server v1.8.4
+2025.10.05 10:33:46 INFO  Connected to Scala CLI server v1.8.4
+2025.10.05 10:33:46 INFO  Connected to Scala CLI server v1.8.4
+2025.10.05 10:33:46 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:33:46 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:33:46 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.15s
+2025.10.05 10:33:46 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-5dae987017 (1 scala source)
+2025.10.05 10:33:46 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-ec83f5da22 (1 scala source)
+2025.10.05 10:33:47 INFO  time: indexed workspace in 1.08s
+2025.10.05 10:33:47 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc
+2025.10.05 10:33:48 INFO  time: indexed workspace in 0.81s
+2025.10.05 10:33:48 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/recursion.sc
+2025.10.05 10:33:48 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/hof.sc
+2025.10.05 10:35:14 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:35:14 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.17s
+2025.10.05 10:35:24 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:35:24 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.13s
+2025.10.05 10:35:31 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:35:31 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:35:31 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 10:36:37 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:36:37 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:36:37 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.11s
+Oct 05, 2025 10:38:17 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1141
+2025.10.05 10:38:27 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:38:27 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:38:27 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.11s
+Oct 05, 2025 10:39:00 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1368
+2025.10.05 10:39:09 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:39:09 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:39:09 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+Oct 05, 2025 10:42:40 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1661
+2025.10.05 10:42:52 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:42:52 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:42:52 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.24s
+2025.10.05 10:44:52 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:44:52 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:44:52 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 10:45:05 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:45:05 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:45:05 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 97ms
+2025.10.05 10:45:15 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:45:15 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:45:15 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 94ms
+2025.10.05 10:45:40 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:45:40 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:45:40 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 10:45:58 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:45:58 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:45:58 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 95ms
+2025.10.05 10:46:02 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:46:02 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:46:02 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 95ms
+2025.10.05 10:46:20 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:46:20 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:46:20 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 10:48:05 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:48:05 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.18s
+2025.10.05 10:48:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/demo.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.05 10:48:42 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli14745222040128228695, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/demo.sc)
+2025.10.05 10:48:42 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.05 10:48:44 INFO  Connected to Scala CLI server v1.8.4
+2025.10.05 10:48:44 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-8573141b36 (1 scala source)
+2025.10.05 10:48:44 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-8573141b36 in 0.14s
+2025.10.05 10:48:45 INFO  time: indexed workspace in 0.83s
+2025.10.05 10:48:45 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/demo.sc
+2025.10.05 10:48:52 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:48:52 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:48:52 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 97ms
+2025.10.05 10:50:04 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:50:04 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:50:04 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+Oct 05, 2025 10:50:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3175
+2025.10.05 10:50:46 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:50:46 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:50:46 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 10:51:14 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:51:14 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:51:14 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 89ms
+2025.10.05 10:51:42 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:51:42 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:51:42 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 90ms
+2025.10.05 10:54:13 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:54:13 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:54:13 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.12s
+Oct 05, 2025 10:58:10 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3867
+2025.10.05 10:58:11 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:58:11 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 60ms
+2025.10.05 10:58:42 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:58:42 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 61ms
+Oct 05, 2025 10:58:55 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3982
+2025.10.05 10:58:57 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 10:58:57 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 10:58:57 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+Oct 05, 2025 10:59:41 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4196
+2025.10.05 11:00:19 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:00:19 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:00:19 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 11:02:55 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:02:55 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.35s
+2025.10.05 11:03:32 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:03:32 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:03:32 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.11s
+2025.10.05 11:03:57 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:03:57 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:03:57 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 88ms
+2025.10.05 11:04:10 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:04:10 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 56ms
+2025.10.05 11:04:16 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:04:16 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 53ms
+2025.10.05 11:04:21 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:04:21 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:04:21 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.11s
+2025.10.05 11:04:26 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:04:26 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:04:26 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 11:05:18 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:05:18 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:05:18 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 11:06:41 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:06:41 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:06:41 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.1s
+2025.10.05 11:09:22 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 11:09:22 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 11:09:22 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 88ms
+2025.10.05 19:53:41 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 19:53:41 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 19:53:41 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.12s
+Oct 05, 2025 8:02:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 6609
+2025.10.05 20:03:01 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:03:01 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.17s
+2025.10.05 20:03:28 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:03:28 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 20:03:28 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 91ms
+2025.10.05 20:04:33 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:04:33 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.2s
+2025.10.05 20:04:39 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:04:39 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.18s
+2025.10.05 20:04:50 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:04:50 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.19s
+2025.10.05 20:05:15 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:05:15 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.18s
+Oct 05, 2025 8:05:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7456
+2025.10.05 20:05:20 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:05:20 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.18s
+Oct 05, 2025 8:05:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7674
+2025.10.05 20:06:12 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:06:12 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.17s
+2025.10.05 20:06:26 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:06:26 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.14s
+2025.10.05 20:06:39 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:06:39 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 0.13s
+2025.10.05 20:06:58 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:06:58 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 20:06:58 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 98ms
+2025.10.05 20:08:48 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac (1 scala source)
+2025.10.05 20:08:48 WARN  there were 2 deprecation warnings; re-run with -deprecation for details
+2025.10.05 20:08:48 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-58da2c31ac in 87ms
