@@ -157,17 +157,32 @@ searchElements.foreach { elem =>
 }
 
 val t1 = new NonEmpty(3, new Empty, new Empty)
-val t2 = t1 `incl` 4
-assert(t2 `contains` 4)
-//assert(t1 `contains` 4)
+val t2 = t1.incl(4)
+assert(t2.contains(4))
+//assert(t1.contains(4))
 println(t1.toString())
 println(t2.toString())
-val t3 = t2 `incl` 1
+val t3 = t2.incl(1)
 println(t3.toString())
-val t4 = t3 `incl` 10
+val t4 = t3.incl(10)
 println(t4.toString())
-val t5 = t4 `incl` 0
+val t5 = t4.incl(0)
 println(t5.toString())
+
+abstract class Base {
+    def foo = 1
+    def bar: Int 
+}
+
+class Sub extends Base {
+    override def foo = 2 
+    def bar: Int = 3
+}
+
+// Fix: properly instantiate the Sub class instead of declaring uninitialized variable
+val s: Sub = new Sub
+assert(s.foo == 2)
+assert(s.bar == 3)
 /*</script>*/ /*<generated>*//*</generated>*/
 }
 

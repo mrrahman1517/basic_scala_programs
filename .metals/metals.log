@@ -2903,3 +2903,297 @@ Oct 06, 2025 9:02:03 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellat
 WARNING: Unmatched cancel notification for request id 15634
 2025.10.06 09:02:05 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
 2025.10.06 09:02:05 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
+Oct 06, 2025 10:10:40 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 15804
+2025.10.06 10:11:23 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 10:11:23 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.12s
+2025.10.06 10:11:59 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 10:11:59 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 70ms
+2025.10.06 10:12:30 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 10:12:30 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 79ms
+2025.10.06 10:14:07 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 10:14:07 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.11s
+2025.10.06 10:14:59 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 (1 scala source)
+2025.10.06 10:14:59 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-791a7da173 in 0.1s
+2025.10.06 10:17:14 INFO  Running List(/opt/homebrew/bin/scala, bsp, --workspace, /var/folders/kq/vh9tlv953418bnzfm2tznzyc0000gn/T/metals-scala-cli14745222040128228695, --semantic-db-source-root, /Users/muntasirraihanrahman/Documents/ScalaFP, /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc)
+2025.10.06 10:17:14 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:17:14 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/muntasirraihanrahman/Documents/ScalaFP/.metals/bsp.trace.json or /Users/muntasirraihanrahman/Library/Caches/org.scalameta.metals/bsp.trace.json
+2025.10.06 10:17:14 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:17:14 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:17:16 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:17:16 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:17:16 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:17:16 INFO  Connected to Scala CLI server v1.8.4
+2025.10.06 10:17:16 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:17:16 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 0.12s
+2025.10.06 10:17:17 INFO  time: indexed workspace in 0.76s
+2025.10.06 10:17:17 INFO  Scala CLI started for /Users/muntasirraihanrahman/Documents/ScalaFP/binary_search_tree.sc
+Oct 06, 2025 10:17:47 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16829
+2025.10.06 10:17:49 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:17:49 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 68ms
+2025.10.06 10:18:12 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:18:12 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 62ms
+2025.10.06 10:18:23 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:18:23 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 66ms
+Oct 06, 2025 10:18:36 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17111
+2025.10.06 10:18:37 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:18:37 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 43ms
+2025.10.06 10:18:46 INFO  compiling metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 (1 scala source)
+2025.10.06 10:18:46 INFO  time: compiled metals-scala-cli14745222040128228695_a020a4fc86-521b359a86 in 0.11s
+2025.10.06 10:20:22 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:22 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:22 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:22 WARN  Could not find semantic tokens for: file:///Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:23 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:23 WARN  Could not find semantic tokens for: file:///Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:25 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:25 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:25 INFO  skipping build import with status 'Installed'
+2025.10.06 10:20:25 WARN  Could not find semantic tokens for: file:///Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 WARN  Could not find semantic tokens for: file:///Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:26 WARN  Could not find semantic tokens for: file:///Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:27 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:28 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:28 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:28 WARN  Could not find semantic tokens for: file:///Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:29 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:31 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:31 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:30 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:31 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:31 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:32 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:34 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:33 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:34 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:34 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:35 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:34 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:35 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:36 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:37 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:37 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:37 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:37 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:38 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:40 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:40 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:39 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:43 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:45 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:44 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:45 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:46 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:46 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:46 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:46 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:47 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:48 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:49 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:50 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:52 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:52 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:52 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:52 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:52 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:53 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:55 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:55 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:54 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:55 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:55 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:55 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:55 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:56 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:56 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:56 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:56 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:57 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:57 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:20:58 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala
+2025.10.06 10:20:58 INFO  skipping build import with status 'Installed'
+2025.10.06 10:20:58 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 10:23:03 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/helloworld.scala. Using presentation compiler with project's scala-library version: 3.7.2

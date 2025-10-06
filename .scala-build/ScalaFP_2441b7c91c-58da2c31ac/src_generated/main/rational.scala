@@ -2,7 +2,7 @@
 
 final class rational$_ {
 def args = rational_sc.args$
-def scriptPath = """/Users/muntasirraihanrahman/Documents/ScalaFP/rational.sc"""
+def scriptPath = """rational.sc"""
 /*<script>*/
 /**
  * Rational Number Implementation in Scala

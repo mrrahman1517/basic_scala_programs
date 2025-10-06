@@ -4,9 +4,9 @@ abstract class IntSet {
     def union(other: IntSet): IntSet
 }
 
-class Empty extends IntSet {
+object Empty extends IntSet {
     override def contains(x: Int): Boolean = false
-    override def incl(x: Int): IntSet = new NonEmpty(x, new Empty, new Empty)
+    override def incl(x: Int): IntSet = new NonEmpty(x, Empty, Empty)
     override def union(other: IntSet): IntSet = other
     override def toString: String = "."
 }
@@ -39,7 +39,7 @@ println("=== TERM REWRITING SIMULATION ===")
 println("Building a Binary Search Tree through step-by-step rewriting\n")
 
 // Start with empty set - our initial term
-val empty = new Empty
+val empty = Empty
 println(s"Initial term: $empty")
 
 // REWRITE STEP 1: empty.incl(3) → NonEmpty(3, Empty, Empty)
@@ -87,8 +87,8 @@ testValues.foreach { value =>
 println("\n=== TESTING UNION OPERATION (Advanced Term Rewriting) ===")
 
 // Create two separate trees
-val leftSubtree = (new Empty).incl(10).incl(8).incl(12)
-val rightSubtree = (new Empty).incl(20).incl(15).incl(25)
+val leftSubtree = (Empty).incl(10).incl(8).incl(12)
+val rightSubtree = (Empty).incl(20).incl(15).incl(25)
 
 println(s"Left subtree: $leftSubtree")
 println(s"Right subtree: $rightSubtree")
@@ -131,7 +131,7 @@ println("\n=== BUILDING LARGER TREE FOR PERFORMANCE ANALYSIS ===")
 
 // Build a larger tree to show scalability
 val largeTreeElements = (1 to 15).toList.reverse // Insert in reverse for interesting structure
-var largeTree: IntSet = new Empty
+var largeTree: IntSet = Empty
 
 println("Building tree by inserting: " + largeTreeElements.mkString(", "))
 largeTreeElements.foreach { elem =>
