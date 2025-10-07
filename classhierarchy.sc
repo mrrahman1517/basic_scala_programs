@@ -177,3 +177,4 @@ class Sub extends Base {
 val s: Sub = new Sub
 assert(s.foo == 2)
 assert(s.bar == 3)
+
