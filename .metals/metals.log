@@ -5397,3 +5397,7 @@ WARNING: Unmatched cancel notification for request id 23042
 2025.10.06 19:39:42 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/cons_list_v3.scala
 2025.10.06 19:39:42 INFO  skipping build import with status 'Installed'
 2025.10.06 19:39:42 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/cons_list_v3.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 19:40:56 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/cons_list_v3.scala. Using presentation compiler with project's scala-library version: 3.7.2
+2025.10.06 19:40:57 INFO  skipping build import with status 'Installed'
+2025.10.06 19:40:57 WARN  no build target for: /Users/muntasirraihanrahman/Documents/ScalaFP/cons_list_v3.scala
+2025.10.06 19:40:57 INFO  no build target found for /Users/muntasirraihanrahman/Documents/ScalaFP/cons_list_v3.scala. Using presentation compiler with project's scala-library version: 3.7.2
