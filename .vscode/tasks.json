@@ -9,6 +9,15 @@
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Run Pure Boolean Demo",
+			"type": "shell",
+			"command": "sbt \"runMain idealized.scala.PureBooleanDemo\"",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
 		}
 	]
 }
