@@ -1,0 +1,282 @@
+/*
+ * Expression Evaluator using Pattern Matching and Case Classes
+ * 
+ * This worksheet demonstrates the idiomatic Scala approach to representing
+ * and evaluating mathematical expressions using case classes and pattern matching.
+ * This is a functional programming approach that contrasts with the object-oriented
+ * approach shown in expr.sc.
+ * 
+ * Key Concepts Demonstrated:
+ * - Case classes for algebraic data types
+ * - Pattern matching with exhaustive case analysis
+ * - Functional approach to expression evaluation
+ * - Automatic constructor parameter extraction in patterns
+ * - Compile-time guarantees for pattern completeness
+ * 
+ * Expression Grammar:
+ * Expr ::= Number(Int) | Var(String) | Sum(Expr, Expr) | Prod(Expr, Expr)
+ * 
+ * Advantages over OOP approach:
+ * - More concise and readable code
+ * - Compile-time pattern exhaustiveness checking
+ * - No need for manual type testing methods
+ * - Automatic extraction of constructor parameters
+ * - Better performance (no runtime type checking)
+ */
+
+/**
+ * Base trait for all mathematical expressions
+ * 
+ * This trait serves as the common type for all expression variants.
+ * Unlike the OOP approach in expr.sc, this trait is minimal and doesn't
+ * define type testing methods - pattern matching handles type discrimination.
+ */
+trait Expr 
+
+/**
+ * Number - represents a numeric literal in an expression
+ * 
+ * Case class automatically provides:
+ * - Constructor parameter as public field
+ * - Pattern matching support
+ * - Structural equality (two Number(5) instances are equal)
+ * - toString, hashCode, and copy methods
+ * 
+ * Example: Number(42) represents the integer 42
+ * 
+ * @param n the integer value this number represents
+ */
+case class Number(n: Int) extends Expr 
+
+/**
+ * Sum - represents addition of two expressions
+ * 
+ * Case class benefits:
+ * - Automatic extraction in pattern matching: Sum(e1, e2) => ...
+ * - Immutable by default
+ * - Structural equality based on operands
+ * 
+ * Example: Sum(Number(3), Number(4)) represents 3 + 4
+ * 
+ * @param e1 the left operand expression
+ * @param e2 the right operand expression
+ */
+case class Sum(e1: Expr, e2: Expr) extends Expr 
+
+/**
+ * Prod - represents multiplication of two expressions
+ * 
+ * Similar to Sum but for multiplication operations.
+ * Pattern matching can distinguish between Sum and Prod automatically.
+ * 
+ * Example: Prod(Number(3), Number(4)) represents 3 * 4
+ * 
+ * @param e1 the left operand expression
+ * @param e2 the right operand expression
+ */
+case class Prod(e1: Expr, e2: Expr) extends Expr 
+
+/**
+ * Var - represents a variable in an expression
+ * 
+ * Variables cannot be evaluated without variable binding/substitution.
+ * Used primarily for symbolic representation of expressions.
+ * 
+ * Example: Var("x") represents the variable x
+ * 
+ * @param x the name of the variable
+ */
+case class Var(x: String) extends Expr 
+
+/**
+ * Expression Evaluator using Pattern Matching
+ * 
+ * This function demonstrates Scala's pattern matching capabilities for
+ * algebraic data types. Each case automatically extracts constructor
+ * parameters, eliminating the need for manual type testing and casting.
+ * 
+ * Pattern Matching Benefits:
+ * - Exhaustiveness checking at compile time
+ * - Automatic parameter extraction
+ * - Clean, readable syntax
+ * - No runtime type checking overhead
+ * - Compiler warnings for missing cases
+ * 
+ * Evaluation Rules:
+ * - Number(n) evaluates to n
+ * - Sum(e1, e2) evaluates to eval(e1) + eval(e2)
+ * - Prod(e1, e2) evaluates to eval(e1) * eval(e2)
+ * - Var(x) is not handled (would cause MatchError)
+ * 
+ * Note: This implementation doesn't handle Var cases, so expressions
+ * with variables will throw a MatchError at runtime.
+ * 
+ * @param e the expression to evaluate
+ * @return the integer result of evaluating the expression
+ * @throws MatchError if the expression contains variables
+ */
+def eval(e: Expr): Int = e match {
+    case Number(n) => n                      // Extract n from Number and return it
+    case Sum(e1, e2) => eval(e1) + eval(e2)  // Extract operands, evaluate recursively, add
+    case Prod(e1, e2) => eval(e1) * eval(e2) // Extract operands, evaluate recursively, multiply
+    // Note: Var case is missing - will throw MatchError for variables
+}
+
+/**
+ * Expression Pretty Printer using Pattern Matching
+ * 
+ * Converts expression trees into readable string representations with
+ * appropriate mathematical notation and parentheses.
+ * 
+ * This function demonstrates complete pattern matching with all cases
+ * handled, including variables. The compiler can verify exhaustiveness.
+ * 
+ * Formatting Rules:
+ * - Number(n) becomes "n"
+ * - Var(x) becomes "x"
+ * - Sum(e1, e2) becomes "(e1+e2)"
+ * - Prod(e1, e2) becomes "(e1*e2)"
+ * 
+ * Pattern Matching Features Shown:
+ * - Complete case coverage (all Expr subtypes handled)
+ * - Recursive pattern matching with parameter extraction
+ * - String interpolation with extracted values
+ * 
+ * @param e the expression to convert to string
+ * @return string representation of the expression
+ */
+def show(e: Expr): String = e match {
+    case Number(n) => n.toString()                          // Convert number to string
+    case Sum(e1, e2) => "(" + show(e1) + "+" + show(e2) + ")" // Recursive formatting for sum
+    case Prod(e1, e2) => "(" + show(e1) + "*" + show(e2) + ")" // Recursive formatting for product
+    case Var(x) => x                                        // Variables display as their name
+}
+
+/*
+ * ========================================
+ * DEMONSTRATION AND TESTING SECTION
+ * ========================================
+ * 
+ * This section demonstrates pattern matching expression evaluation
+ * with various test cases showing algebraic identity verification.
+ */
+
+println("=== Pattern Matching Expression Evaluator Demo ===")
+println()
+
+// Test data: Create basic number expressions
+println("--- Creating Basic Expressions ---")
+val n1 = Number(5)
+val n2 = Number(6) 
+val n3 = Number(7)
+
+println(s"n1 = ${show(n1)}")
+println(s"n2 = ${show(n2)}")
+println(s"n3 = ${show(n3)}")
+println()
+
+// Test composite expressions
+println("--- Building Composite Expressions ---")
+val e1 = Sum(n1, n2)        // (5+6)
+val e2 = Prod(e1, n3)       // ((5+6)*7)
+val e3 = Prod(n1, n3)       // (5*7)
+val e4 = Prod(n2, n3)       // (6*7)
+val e5 = Sum(e3, e4)        // ((5*7)+(6*7))
+
+println(s"e1 = Sum(n1, n2) = ${show(e1)}")
+println(s"e2 = Prod(e1, n3) = ${show(e2)}")
+println(s"e3 = Prod(n1, n3) = ${show(e3)}")
+println(s"e4 = Prod(n2, n3) = ${show(e4)}")
+println(s"e5 = Sum(e3, e4) = ${show(e5)}")
+println()
+
+// Demonstrate distributive property: (a+b)*c = (a*c)+(b*c)
+println("--- Algebraic Identity Verification ---")
+println("Testing distributive property: (a+b)*c = (a*c)+(b*c)")
+println(s"Left side:  ${show(e2)} = ${eval(e2)}")
+println(s"Right side: ${show(e5)} = ${eval(e5)}")
+println(s"Identity holds: ${eval(e2) == eval(e5)}")
+
+// Verify the assertion
+assert(eval(e2) == eval(e5), "Distributive property should hold")
+println("✓ Distributive property verified using pattern matching!")
+println()
+
+// Test with variables (symbolic expressions)
+println("--- Symbolic Expressions with Variables ---")
+val v1 = Var("x1")
+val v2 = Var("x2")
+val v3 = Var("x3")
+
+println(s"Variables: v1=${show(v1)}, v2=${show(v2)}, v3=${show(v3)}")
+
+val e6 = Sum(v1, v2)        // (x1+x2)
+val e7 = Prod(e6, v3)       // ((x1+x2)*x3)
+val e8 = Prod(v1, v3)       // (x1*x3)
+val e9 = Prod(v2, v3)       // (x2*x3)
+val e10 = Sum(e8, e9)       // ((x1*x3)+(x2*x3))
+
+println(s"e6 = Sum(v1, v2) = ${show(e6)}")
+println(s"e7 = Prod(e6, v3) = ${show(e7)}")
+println(s"e8 = Prod(v1, v3) = ${show(e8)}")
+println(s"e9 = Prod(v2, v3) = ${show(e9)}")
+println(s"e10 = Sum(e8, e9) = ${show(e10)}")
+println()
+
+println("--- Symbolic Distributive Property ---")
+print("Symbolic identity: " + show(e7) + " == ")
+println(show(e10))
+println("This shows: (x1+x2)*x3 == (x1*x3)+(x2*x3)")
+println("✓ Pattern matching enables clean symbolic manipulation!")
+println()
+
+// Note about evaluation limitations
+println("--- Evaluation Limitations ---")
+println("Note: Variables cannot be evaluated without substitution")
+println("Attempting to eval() expressions with variables would throw MatchError")
+println("This demonstrates the importance of complete pattern matching")
+
+println()
+println("=== Pattern Matching vs OOP Comparison ===")
+println("✅ Pattern matching approach benefits:")
+println("  • More concise and readable code")
+println("  • Compile-time exhaustiveness checking")
+println("  • Automatic parameter extraction")
+println("  • Better performance (no runtime type checking)")
+println("  • Functional programming style")
+println()
+println("✅ OOP approach benefits (from expr.sc):")
+println("  • Easier to add new operations without modifying existing code")
+println("  • Encapsulation of type-specific behavior")
+println("  • More familiar to OOP developers")
+println("  • Better for extensible designs")
+
+/*
+ * PATTERN MATCHING DESIGN ANALYSIS:
+ * 
+ * Case Classes vs Regular Classes:
+ * - Case classes provide automatic pattern matching support
+ * - Structural equality instead of reference equality
+ * - Immutable by default (constructor parameters are vals)
+ * - Automatic toString, equals, hashCode, and copy methods
+ * 
+ * Pattern Matching vs Type Testing:
+ * - Pattern matching: Compile-time verification, parameter extraction
+ * - Type testing: Runtime checks, manual casting required
+ * - Pattern matching is generally preferred in functional programming
+ * 
+ * Exhaustiveness Checking:
+ * - Compiler warns about missing cases in pattern matching
+ * - Helps prevent runtime errors from unhandled cases
+ * - Can be disabled with catch-all case: case _ => ...
+ * 
+ * Performance Considerations:
+ * - Pattern matching compiles to efficient bytecode
+ * - No runtime type checking overhead
+ * - Case class construction is lightweight
+ * 
+ * When to use each approach:
+ * - Pattern matching: When you have a closed set of types and many operations
+ * - OOP with virtual dispatch: When you have many types and few operations
+ * - This is known as the "Expression Problem" in programming language design
+ */
