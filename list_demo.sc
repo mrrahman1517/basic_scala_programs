@@ -216,6 +216,161 @@ println("10. insert(11, [2, 11, 45]) = [2, 11, 11, 45]")
 println("11. insert(34, [2, 11, 11, 45]) = [2, 11, 11, 34, 45]")
 
 println()
+println("=== Additional Recursive List Functions ===")
+
+// ===================================
+// LENGTH FUNCTION - COUNTING ELEMENTS
+// ===================================
+
+println("--- List Length Calculation ---")
+
+/**
+ * Recursive list length function using pattern matching
+ * 
+ * This demonstrates fundamental recursive thinking:
+ * - Base case: empty list has length 0
+ * - Recursive case: 1 + length of tail
+ * 
+ * Time Complexity: O(n) where n is the number of elements
+ * Space Complexity: O(n) due to recursive call stack
+ * 
+ * @param xs the list to measure
+ * @return the number of elements in the list
+ */
+def length(xs: List[Int]): Int = xs match {
+    case List() => 0                         // Base case: empty list length is 0
+    case y :: ys => 1 + length(ys)          // Recursive case: 1 + length of tail
+}
+
+// Test data: lengths of famous physicists' names
+val l = List("physics".length(), "Witten".length(), "Penrose".length())
+println(s"Test list with name lengths: $l")
+println(s"Custom length function: length($l) = ${length(l)}")
+println(s"Built-in length method: $l.length = ${l.length}")
+
+// Verification with assertions
+assert(length(l) == 3, "Length of test list should be 3")
+assert(length(Nil) == 0, "Length of empty list should be 0")
+println("✓ Length function assertions passed")
+println()
+
+// ===================================
+// CONCATENATION FUNCTION - JOINING LISTS
+// ===================================
+
+println("--- List Concatenation ---")
+
+/**
+ * Recursive list concatenation function
+ * 
+ * Joins two lists by recursively building a new list:
+ * - Base case: concatenating empty list with ys returns ys
+ * - Recursive case: prepend head of xs to concatenation of tail with ys
+ * 
+ * This demonstrates how to combine data structures recursively.
+ * 
+ * Time Complexity: O(n) where n is length of first list
+ * Space Complexity: O(n) due to recursive calls and new list construction
+ * 
+ * Note: Scala provides built-in ++ operator for concatenation
+ * 
+ * @param xs the first list
+ * @param ys the second list  
+ * @return new list containing all elements of xs followed by all elements of ys
+ */
+def concat(xs: List[Int], ys: List[Int]): List[Int] = xs match {
+    case List() => ys                        // Base case: empty + ys = ys
+    case z :: zs => z :: concat(zs, ys)      // Recursive: head :: concat(tail, ys)
+}
+
+val list1 = List(11, 2, 33)
+val list2 = List(44, 56)
+val concatenated = concat(list1, list2)
+
+println(s"First list: $list1")
+println(s"Second list: $list2") 
+println(s"Custom concat: concat($list1, $list2) = $concatenated")
+println(s"Built-in ++ operator: $list1 ++ $list2 = ${list1 ++ list2}")
+
+// Verify our implementation matches built-in behavior
+assert(concatenated == list1 ++ list2, "Custom concat should match ++ operator")
+println("✓ Concatenation function working correctly")
+println()
+
+// ===================================
+// REVERSE FUNCTION - LIST REVERSAL
+// ===================================
+
+println("--- List Reversal ---")
+
+/**
+ * Recursive list reversal function  
+ * 
+ * Algorithm approach:
+ * - Base case: reverse of empty list is empty list
+ * - Recursive case: reverse tail and append head at the end
+ * 
+ * Time Complexity: O(n²) - each recursive call does O(n) concatenation
+ * Space Complexity: O(n) for recursive call stack
+ * 
+ * Note: This is inefficient due to repeated concatenation.
+ * A tail-recursive approach with accumulator would be O(n).
+ * 
+ * @param xs the list to reverse
+ * @return new list with elements in reverse order
+ */
+def reverse(xs: List[Int]): List[Int] = xs match {
+    case List() => List()                    // Base case: reverse of empty is empty
+    case y :: ys => reverse(ys) ++ List(y)   // Recursive: reverse(tail) ++ [head]
+}
+
+val testList = List(1, 2, 3, 1, 7)
+val reversed = reverse(testList)
+
+println(s"Original list: $testList")
+println(s"Custom reverse: reverse($testList) = $reversed")
+println(s"Built-in reverse: $testList.reverse = ${testList.reverse}")
+
+// Verify our implementation matches built-in behavior
+assert(reversed == testList.reverse, "Custom reverse should match built-in reverse")
+println("✓ Reverse function working correctly")
+
+println()
+println("--- Performance Analysis ---")
+println("Function complexities:")
+println("• length():  O(n) time, O(n) space")
+println("• concat():  O(n) time, O(n) space (n = length of first list)")
+println("• reverse(): O(n²) time, O(n) space (inefficient implementation)")
+println("• isort():   O(n²) time, O(n) space")
+println()
+
+println("--- More Efficient Reverse Implementation ---")
+
+/**
+ * Tail-recursive reverse with accumulator for better performance
+ * 
+ * This version uses an accumulator to build the result iteratively,
+ * avoiding the expensive concatenation operations.
+ * 
+ * Time Complexity: O(n) - each element processed once
+ * Space Complexity: O(n) - but more efficient stack usage
+ * 
+ * @param xs the list to reverse
+ * @param acc accumulator for building reversed list
+ * @return reversed list
+ */
+def reverseEfficient(xs: List[Int], acc: List[Int] = Nil): List[Int] = xs match {
+    case List() => acc                       // Base case: return accumulated result
+    case y :: ys => reverseEfficient(ys, y :: acc)  // Tail recursive: move head to acc
+}
+
+val efficientReversed = reverseEfficient(testList)
+println(s"Efficient reverse: reverseEfficient($testList) = $efficientReversed")
+assert(efficientReversed == testList.reverse, "Efficient reverse should match built-in")
+println("✓ Efficient reverse implementation working correctly")
+println()
+
+println()
 println("=== Summary ===")
 println("✅ List creation and manipulation")
 println("✅ Pattern matching with lists")  
@@ -223,7 +378,12 @@ println("✅ Cons operator (::) usage")
 println("✅ Higher-order functions (map)")
 println("✅ Recursive list processing")
 println("✅ Functional insertion sort implementation")
+println("✅ List length calculation with recursion")
+println("✅ List concatenation with custom implementation")
+println("✅ List reversal (both naive and efficient implementations)")
+println("✅ Performance analysis and optimization techniques")
 println("✅ Immutable data structure benefits")
+println("✅ Comprehensive testing with assertions")
 
 /*
  * KEY FUNCTIONAL PROGRAMMING CONCEPTS DEMONSTRATED:
@@ -242,6 +402,7 @@ println("✅ Immutable data structure benefits")
  *    - Self-referential function definitions
  *    - Breaking problems into smaller subproblems
  *    - Base cases to terminate recursion
+ *    - Tail recursion optimization for efficiency
  * 
  * 4. HIGHER-ORDER FUNCTIONS:
  *    - Functions that take other functions as parameters
@@ -253,13 +414,44 @@ println("✅ Immutable data structure benefits")
  *    - Efficient head/tail operations
  *    - Natural fit for recursive algorithms
  * 
- * TIME COMPLEXITY ANALYSIS:
- * - isort(): O(n²) where n is list length
+ * COMPLETE TIME COMPLEXITY ANALYSIS:
+ * - length(): O(n) linear traversal of list
+ * - concat(): O(n) where n is length of first list
+ * - reverse(): O(n²) due to repeated concatenation (naive implementation)
+ * - reverseEfficient(): O(n) tail-recursive with accumulator
+ * - isort(): O(n²) insertion sort algorithm
  * - insert(): O(n) for inserting into sorted list
- * - List construction with ::: O(1) for prepending
- * - head/tail operations: O(1) constant time
+ * - List construction with :: : O(1) for prepending
+ * - head/tail operations: O(1) constant time access
  * 
- * This demonstrates how functional programming can elegantly solve
- * classic computer science problems using immutable data structures
- * and recursive thinking.
+ * PERFORMANCE OPTIMIZATION TECHNIQUES SHOWN:
+ * - Tail recursion with accumulator (reverseEfficient)
+ * - Avoiding expensive operations (++ concatenation in loops)
+ * - Understanding complexity implications of different approaches
+ * - Comparing naive vs optimized implementations
+ * 
+ * EDUCATIONAL PROGRESSION DEMONSTRATED:
+ * 1. Basic list operations and construction
+ * 2. Pattern matching fundamentals  
+ * 3. Simple recursive functions (length, concat)
+ * 4. Complex recursive algorithms (insertion sort)
+ * 5. Performance analysis and optimization
+ * 6. Comparison with built-in library functions
+ * 7. Testing and verification with assertions
+ * 
+ * FUNCTIONAL PROGRAMMING BENEFITS ILLUSTRATED:
+ * - Code clarity through pattern matching
+ * - Mathematical reasoning about recursive functions
+ * - Immutability preventing accidental modifications
+ * - Composability of pure functions
+ * - Natural expression of recursive algorithms
+ * - Type safety with static typing
+ * 
+ * This comprehensive tutorial demonstrates how functional programming
+ * can elegantly solve classic computer science problems using immutable
+ * data structures, recursive thinking, and mathematical reasoning.
+ * 
+ * The progression from basic operations to advanced algorithms shows
+ * how functional programming concepts build upon each other to create
+ * powerful and expressive solutions.
  */
