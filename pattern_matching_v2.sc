@@ -334,6 +334,7 @@ val expr2 = Prod(Sum(Number(2), Var("x")), Var("y"))           // (2+x)*y
 val expr3 = Sum(Var("a"), Prod(Var("b"), Var("c")))           // a + b*c
 val expr4 = Prod(Var("a"), Sum(Var("b"), Var("c")))           // a*(b+c)
 val expr5 = Sum(Prod(Number(3), Number(4)), Prod(Number(5), Number(6))) // 3*4 + 5*6
+val expr6 = Prod(Number(2), Sum(Var("x"), Var("y")))
 
 println("--- Comparison: Full Parentheses vs Smart Formatting ---")
 val testExprs = List(
@@ -341,7 +342,8 @@ val testExprs = List(
     ("(2+x)*y", expr2), 
     ("a + b*c", expr3),
     ("a*(b+c)", expr4),
-    ("3*4 + 5*6", expr5)
+    ("3*4 + 5*6", expr5),
+    ("2*(x+y)", expr6)
 )
 
 for ((description, expr) <- testExprs) {
