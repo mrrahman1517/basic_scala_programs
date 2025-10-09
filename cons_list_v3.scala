@@ -27,7 +27,7 @@ package conslist.v3
  * 
  * @tparam T the type of elements stored in this list
  */
-trait List[T] {
+trait List[+T] {
     /**
      * Determines if this list is empty
      * @return true if this is an empty list (Nil), false if it contains elements (Cons)
@@ -53,6 +53,8 @@ trait List[T] {
      * @return the length as a non-negative integer
      */
     def length: Int 
+
+    def prepend[U >: T](elem: U): List[U] = new Cons(elem, this)
 }
 
 /**
@@ -76,6 +78,8 @@ class Cons[T](val head: T, val tail: List[T]) extends List[T] {
      * This implements the recursive definition: |h::t| = 1 + |t|
      */
     def length = 1 + tail.length 
+
+
 }
 
 /**
@@ -86,7 +90,7 @@ class Cons[T](val head: T, val tail: List[T]) extends List[T] {
  * 
  * @tparam T the type that this empty list would contain (phantom type)
  */
-class Nil[T] extends List[T] {
+object Nil extends List[Nothing] {
     /**
      * Nil is always empty by definition
      */
@@ -110,8 +114,12 @@ class Nil[T] extends List[T] {
     def length = 0
 }
 
+object test {
+    val x: List[String] = Nil
+}
+
 object List {
-    def singleton[T](elem: T) = new Cons[T](elem, new Nil[T])
+    def singleton[T](elem: T) = new Cons[T](elem, Nil)
     
     def select[T](n: Int, l: List[T]): T = {
         if (n < 0 || n >= l.length) throw new IndexOutOfBoundsException("invalid index")
@@ -139,7 +147,7 @@ object List {
      * @tparam T the type of elements (inferred)
      * @return a List[T] containing x1 followed by x2
      */
-    def apply[T](x1: T, x2: T): List[T] = new Cons(x1, new Cons(x2, new Nil))
+    def apply[T](x1: T, x2: T): List[T] = new Cons(x1, new Cons(x2, Nil))
     
     /**
      * Creates an empty list  
@@ -148,7 +156,7 @@ object List {
      * @tparam T the type of elements the list would contain
      * @return an empty List[T]
      */
-    def apply[T](): List[T] = new Nil
+    def apply[T](): List[T] = Nil
     
     /**
      * Creates a single-element list
@@ -158,7 +166,7 @@ object List {
      * @tparam T the type of the element (inferred)
      * @return a List[T] containing only x
      */
-    def apply[T](x: T): List[T] = new Cons(x, new Nil)
+    def apply[T](x: T): List[T] = new Cons(x, Nil)
 }
 
 /**
@@ -172,7 +180,7 @@ object Main {
         val sl2 = List.singleton[Boolean](true) 
         
         println("Cons List V3 Demo")
-        println(s"Nil list is empty: ${new Nil[Int].isEmpty}")
+        println(s"Nil list is empty: ${Nil.isEmpty}")
         println(s"sl1 isEmpty: ${sl1.isEmpty}")
         println(s"sl2 isEmpty: ${sl2.isEmpty}")
         println(s"singleton int is empty: ${List.singleton(1).isEmpty}")
@@ -186,7 +194,7 @@ object Main {
         println(s"List.select(0, sl2) = ${List.select(0, sl2)}")
         
         // Create a longer list for more comprehensive testing
-        val list3 = new Cons(10, new Cons(20, new Cons(30, new Nil[Int])))
+        val list3 = new Cons(10, new Cons(20, new Cons(30, Nil)))
         println(s"List.select(0, [10,20,30]) = ${List.select(0, list3)}")
         println(s"List.select(1, [10,20,30]) = ${List.select(1, list3)}")
         println(s"List.select(2, [10,20,30]) = ${List.select(2, list3)}")
@@ -212,7 +220,7 @@ object Main {
         
         // Test with empty list
         try {
-            List.select(0, new Nil[Int])
+            List.select(0, Nil)
         } catch {
             case e: IndexOutOfBoundsException => 
                 println(s"✓ Expected error for empty list: ${e.getMessage}")
@@ -346,14 +354,14 @@ object Main {
          * Test 7: Structural equivalence validation
          * Verifies that apply methods create identical structures to manual construction
          */
-        val manualSingle = new Cons("manual", new Nil[String])
+        val manualSingle = new Cons("manual", Nil)
         val applySingle = List("manual")
         
         println(s"Manual construction: head=${manualSingle.head}, isEmpty=${manualSingle.tail.isEmpty}")
         println(s"Apply construction:  head=${applySingle.head}, isEmpty=${applySingle.tail.isEmpty}")
         println(s"Structures equivalent: ${manualSingle.head == applySingle.head && manualSingle.tail.isEmpty == applySingle.tail.isEmpty}")
         
-        val manualDouble = new Cons(1, new Cons(2, new Nil[Int]))
+        val manualDouble = new Cons(1, new Cons(2, Nil))
         val applyDouble = List(1, 2)
         
         println(s"Manual double: [${manualDouble.head}, ${manualDouble.tail.head}]")
