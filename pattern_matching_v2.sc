@@ -38,11 +38,47 @@ trait Expr {
         case Prod(e1, e2) => e1.eval * e2.eval
         case Var(_) => throw new Error("Cannot evaluate variable without substitution")
     }
+    
+    /**
+     * Basic show method with full parentheses (always safe but verbose)
+     */
     def show: String = this match {
         case Number(n) => n.toString()
         case Sum(e1, e2) => "(" + e1.show + "+" + e2.show + ")"
         case Prod(e1, e2) => "(" + e1.show + "*" + e2.show + ")"
         case Var(x) => x 
+    }
+    
+    /**
+     * Precedence-aware show method that minimizes parentheses
+     * 
+     * Operator precedence (higher number = higher precedence):
+     * - Multiplication (*): precedence 2
+     * - Addition (+): precedence 1
+     * - Numbers and Variables: precedence 3 (highest, never need parentheses)
+     * 
+     * Parentheses are only added when:
+     * 1. A lower precedence operation is used as operand to higher precedence operation
+     * 2. Left-associativity requires disambiguation
+     */
+    def showSmart: String = showWithPrecedence(0)
+    
+    /**
+     * Helper method for precedence-aware formatting
+     * @param parentPrecedence the precedence of the parent operation
+     * @return formatted string with minimal parentheses
+     */
+    def showWithPrecedence(parentPrecedence: Int): String = this match {
+        case Number(n) => n.toString()
+        case Var(x) => x
+        case Sum(e1, e2) => 
+            val precedence = 1  // Addition has precedence 1
+            val result = e1.showWithPrecedence(precedence) + "+" + e2.showWithPrecedence(precedence)
+            if (parentPrecedence > precedence) "(" + result + ")" else result
+        case Prod(e1, e2) => 
+            val precedence = 2  // Multiplication has precedence 2
+            val result = e1.showWithPrecedence(precedence) + "*" + e2.showWithPrecedence(precedence)
+            if (parentPrecedence > precedence) "(" + result + ")" else result
     }
 }
 
@@ -136,7 +172,7 @@ def eval(e: Expr): Int = e match {
 }
 
 /**
- * Expression Pretty Printer using Pattern Matching
+ * Expression Pretty Printer using Pattern Matching (with full parentheses)
  * 
  * Converts expression trees into readable string representations with
  * appropriate mathematical notation and parentheses.
@@ -150,19 +186,57 @@ def eval(e: Expr): Int = e match {
  * - Sum(e1, e2) becomes "(e1+e2)"
  * - Prod(e1, e2) becomes "(e1*e2)"
  * 
- * Pattern Matching Features Shown:
- * - Complete case coverage (all Expr subtypes handled)
- * - Recursive pattern matching with parameter extraction
- * - String interpolation with extracted values
+ * Note: This version always adds parentheses for safety but can be verbose.
+ * See showSmart() for precedence-aware formatting.
  * 
  * @param e the expression to convert to string
- * @return string representation of the expression
+ * @return string representation of the expression with full parentheses
  */
 def show(e: Expr): String = e match {
     case Number(n) => n.toString()                          // Convert number to string
     case Sum(e1, e2) => "(" + show(e1) + "+" + show(e2) + ")" // Recursive formatting for sum
     case Prod(e1, e2) => "(" + show(e1) + "*" + show(e2) + ")" // Recursive formatting for product
     case Var(x) => x                                        // Variables display as their name
+}
+
+/**
+ * Smart Expression Pretty Printer with Precedence Awareness
+ * 
+ * This function minimizes parentheses by respecting operator precedence:
+ * - Multiplication (*) has higher precedence than addition (+)
+ * - Numbers and variables never need parentheses
+ * - Parentheses are only added when necessary for correct evaluation
+ * 
+ * Examples of precedence-aware formatting:
+ * - "2*x+y" instead of "(2*x)+y" 
+ * - "x+y*z" instead of "x+(y*z)"
+ * - "(x+y)*z" when parentheses are actually needed
+ * 
+ * @param e the expression to convert to string
+ * @return string representation with minimal necessary parentheses
+ */
+def showSmart(e: Expr): String = showSmartWithPrecedence(e, 0)
+
+/**
+ * Helper function for precedence-aware formatting
+ * 
+ * @param e the expression to format
+ * @param parentPrecedence the precedence of the parent operation
+ * @return formatted string with appropriate parentheses
+ */
+def showSmartWithPrecedence(e: Expr, parentPrecedence: Int): String = e match {
+    case Number(n) => n.toString()
+    case Var(x) => x
+    case Sum(e1, e2) => 
+        val precedence = 1  // Addition has precedence 1
+        val result = showSmartWithPrecedence(e1, precedence) + "+" + 
+                    showSmartWithPrecedence(e2, precedence)
+        if (parentPrecedence > precedence) "(" + result + ")" else result
+    case Prod(e1, e2) => 
+        val precedence = 2  // Multiplication has precedence 2  
+        val result = showSmartWithPrecedence(e1, precedence) + "*" + 
+                    showSmartWithPrecedence(e2, precedence)
+        if (parentPrecedence > precedence) "(" + result + ")" else result
 }
 
 /*
@@ -250,6 +324,51 @@ println("Attempting to eval() expressions with variables would throw MatchError"
 println("This demonstrates the importance of complete pattern matching")
 
 println()
+println("=== Precedence-Aware Pretty Printing ===")
+println("Demonstrating the difference between full parentheses vs smart formatting:")
+println()
+
+// Create test expressions to show precedence handling
+val expr1 = Sum(Prod(Number(2), Var("x")), Var("y"))           // 2*x + y
+val expr2 = Prod(Sum(Number(2), Var("x")), Var("y"))           // (2+x)*y  
+val expr3 = Sum(Var("a"), Prod(Var("b"), Var("c")))           // a + b*c
+val expr4 = Prod(Var("a"), Sum(Var("b"), Var("c")))           // a*(b+c)
+val expr5 = Sum(Prod(Number(3), Number(4)), Prod(Number(5), Number(6))) // 3*4 + 5*6
+
+println("--- Comparison: Full Parentheses vs Smart Formatting ---")
+val testExprs = List(
+    ("2*x + y", expr1),
+    ("(2+x)*y", expr2), 
+    ("a + b*c", expr3),
+    ("a*(b+c)", expr4),
+    ("3*4 + 5*6", expr5)
+)
+
+for ((description, expr) <- testExprs) {
+    println(s"Expression: $description")
+    println(s"  Full parentheses: ${show(expr)}")
+    println(s"  Smart formatting: ${showSmart(expr)}")
+    println(s"  Method call:      ${expr.showSmart}")
+    println()
+}
+
+println("--- Benefits of Smart Formatting ---")
+println("✅ More natural mathematical notation")
+println("✅ Follows standard operator precedence rules")
+println("✅ Reduces visual clutter while maintaining correctness")
+println("✅ Easier to read complex expressions")
+println("✅ Matches how mathematicians write expressions")
+
+println()
+println("--- Method vs Function Call Demonstration ---")
+val exampleExpr = Sum(Prod(Number(2), Var("x")), Var("y"))
+println(s"Full parentheses - Function: ${show(exampleExpr)}")
+println(s"Full parentheses - Method:   ${exampleExpr.show}")
+println(s"Smart formatting - Function: ${showSmart(exampleExpr)}")
+println(s"Smart formatting - Method:   ${exampleExpr.showSmart}")
+println("Both method calls and function calls work for pattern matching!")
+
+println()
 println("=== Pattern Matching vs OOP Comparison ===")
 println("✅ Pattern matching approach benefits:")
 println("  • More concise and readable code")
@@ -293,11 +412,3 @@ println("  • Better for extensible designs")
  * - OOP with virtual dispatch: When you have many types and few operations
  * - This is known as the "Expression Problem" in programming language design
  */
-
-// Example of method call syntax vs function call syntax
-println()
-println("--- Method vs Function Call Demonstration ---")
-val exampleExpr = Sum(Prod(Number(2), Var("x")), Var("y"))
-println(s"Example expression: ${exampleExpr.show}")
-println(s"Same using function: ${show(exampleExpr)}")
-println("Both method calls and function calls work for pattern matching!")
