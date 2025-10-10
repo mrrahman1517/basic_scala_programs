@@ -1,39 +1,96 @@
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
 [0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 44 products, 10 sources, 3 libraries[0m
-[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/helloworld.scala, ${BASE}/hello.scala, ${BASE}/rational.scala, ${BASE}/nth_elem_standalone.scala, ${BASE}/rational_driver.scala, ${BASE}/pure_booleans.scala, ${BASE}/actor_demo.scala, ${BASE}/cons_list_v2.scala, ${BASE}/cons_list_v3.scala, ${BASE}/nth_elem.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/pure_booleans.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 64 products, 12 sources, 3 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/helloworld.scala, ${BASE}/hello.scala, ${BASE}/valid_anagram.scala, ${BASE}/rational.scala, ${BASE}/nth_elem_standalone.scala, ${BASE}/rational_driver.scala, ${BASE}/pure_booleans.scala, ${BASE}/actor_demo.scala, ${BASE}/cons_list_v2.scala, ${BASE}/cons_list_v3.scala, ${BASE}/nth_elem.scala, ${BASE}/natural.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(${BASE}/cons_list_v3.scala), unmodified = ...),Set(),Set(),API Changes: Set())[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial source changes:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	removed: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	added: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/pure_booleans.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	modified: Set(${BASE}/cons_list_v3.scala)[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(idealized.scala.False, idealized.scala.PureBooleanDemo, idealized.scala.Boolean, idealized.scala.True)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(conslist.v3.Main, conslist.v3.Nil, conslist.v3.Cons, conslist.v3.List)[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(idealized.scala.False, idealized.scala.PureBooleanDemo, idealized.scala.Boolean, idealized.scala.True)[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/pure_booleans.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: idealized.scala.False, idealized.scala.PureBooleanDemo, idealized.scala.Boolean, idealized.scala.True[0m
-[0m[[0m[0mdebug[0m] [0m[0mIncluding idealized.scala.True by idealized.scala.Boolean[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(conslist.v3.Main, conslist.v3.Nil, conslist.v3.Cons, conslist.v3.List)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(${BASE}/cons_list_v3.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: conslist.v3.Main, conslist.v3.Nil, conslist.v3.Cons, conslist.v3.List[0m
 [0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 1[0m
 [0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mReturning already retrieved and compiled bridge: /Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala2-sbt-bridge/2.13.12/scala2-sbt-bridge-2.13.12.jar.[0m
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 3a98638f for Scala compiler version 2.13.12[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 336ca757 for Scala compiler version 2.13.12[0m
 [0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
 [0m[[0m[0mdebug[0m] [0m[0m	/Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor-typed_2.13/2.8.0/akka-actor-typed_2.13-2.8.0.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.0/akka-actor_2.13-2.8.0.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.0/akka-slf4j_2.13-2.8.0.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar[0m
-[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.338002417 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mScala compilation took 1.362388792 s[0m
 [0m[[0m[0mdebug[0m] [0m[0mdone compiling[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from conslist.v3.Cons...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: conslist.v3.Cons[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(conslist.v3.Cons)[0m
+[0m[[0m[0mdebug[0m] [0m[0mNone of the modified names appears in source file of NthElemDemo. This dependency is not being considered for invalidation.[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(conslist.v3.Cons,ModifiedNames(changes = UsedName(prepend,[Default]), UsedName($init$,[Default]))) invalidates 1 classes due to The conslist.v3.Cons has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(prepend,[Default]), UsedName($init$,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(conslist.v3.Cons)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from conslist.v3.Nil...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: conslist.v3.Nil[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(conslist.v3.Nil)[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of NthElemDemo: [UsedName(tail,[Default]), UsedName(head,[Default]), UsedName(Nil,[Default]), UsedName(conslist;v3;Nil;init;,[Default]), UsedName(==,[Default])][0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(conslist.v3.Nil,ModifiedNames(changes = UsedName(!=,[Default]), UsedName(isInstanceOf,[Default]), UsedName(tail,[Default]), UsedName(equals,[Default]), UsedName(notify,[Default]), UsedName($init$,[Default]), UsedName(hashCode,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(head,[Default]), UsedName(isEmpty,[Default]), UsedName(finalize,[Default]), UsedName(prepend,[Default]), UsedName(Nil,[Default]), UsedName(ne,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(wait,[Default]), UsedName(##,[Default]), UsedName(clone,[Default]), UsedName(conslist;v3;Nil;init;,[Default]), UsedName(length,[Default]), UsedName(asInstanceOf,[Default]), UsedName(==,[Default]), UsedName(getClass,[Default]))) invalidates 2 classes due to The conslist.v3.Nil has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(!=,[Default]), UsedName(isInstanceOf,[Default]), UsedName(tail,[Default]), UsedName(equals,[Default]), UsedName(notify,[Default]), UsedName($init$,[Default]), UsedName(hashCode,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(head,[Default]), UsedName(isEmpty,[Default]), UsedName(finalize,[Default]), UsedName(prepend,[Default]), UsedName(Nil,[Default]), UsedName(ne,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(wait,[Default]), UsedName(##,[Default]), UsedName(clone,[Default]), UsedName(conslist;v3;Nil;init;,[Default]), UsedName(length,[Default]), UsedName(asInstanceOf,[Default]), UsedName(==,[Default]), UsedName(getClass,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(conslist.v3.Nil)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by member reference: Set(NthElemDemo)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from conslist.v3.test...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: conslist.v3.test[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(conslist.v3.test)[0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(conslist.v3.test,ModifiedNames(changes = UsedName(!=,[Default]), UsedName(isInstanceOf,[Default]), UsedName(equals,[Default]), UsedName(notify,[Default]), UsedName(hashCode,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(finalize,[Default]), UsedName(ne,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(wait,[Default]), UsedName(##,[Default]), UsedName(clone,[Default]), UsedName(x,[Default]), UsedName(asInstanceOf,[Default]), UsedName(test,[Default]), UsedName(==,[Default]), UsedName(getClass,[Default]))) invalidates 1 classes due to The conslist.v3.test has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(!=,[Default]), UsedName(isInstanceOf,[Default]), UsedName(equals,[Default]), UsedName(notify,[Default]), UsedName(hashCode,[Default]), UsedName(synchronized,[Default]), UsedName(eq,[Default]), UsedName(finalize,[Default]), UsedName(ne,[Default]), UsedName(notifyAll,[Default]), UsedName(toString,[Default]), UsedName(wait,[Default]), UsedName(##,[Default]), UsedName(clone,[Default]), UsedName(x,[Default]), UsedName(asInstanceOf,[Default]), UsedName(test,[Default]), UsedName(==,[Default]), UsedName(getClass,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(conslist.v3.test)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from conslist.v3.List...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: conslist.v3.List[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding conslist.v3.Nil by conslist.v3.List[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding conslist.v3.Cons by conslist.v3.List[0m
+[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(conslist.v3.List, conslist.v3.Cons, conslist.v3.Nil)[0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of NthElemDemo: [UsedName(List,[Default])][0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of NthElemDemo: [UsedName(List,[Default])][0m
+[0m[[0m[0mdebug[0m] [0m[0mThe following modified names cause invalidation of NthElemDemo: [UsedName(List,[Default])][0m
+[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(conslist.v3.List,ModifiedNames(changes = UsedName(prepend,[Default]), UsedName($init$,[Default]), UsedName(List,[Default]))) invalidates 4 classes due to The conslist.v3.List has the following regular definitions changed:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UsedName(prepend,[Default]), UsedName($init$,[Default]), UsedName(List,[Default]).[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by transitive inheritance: Set(conslist.v3.List, conslist.v3.Cons, conslist.v3.Nil)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m  > by member reference: Set(NthElemDemo)[0m
+[0m[[0m[0mdebug[0m] [0m[0m  > [0m
+[0m[[0m[0mdebug[0m] [0m[0m        [0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	NthElemDemo[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: NthElemDemo[0m
 [0m[[0m[0mdebug[0m] [0m[0mPreviously invalidated, but (transitively) depend on new invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0mFinal step, transitive dependencies:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: idealized.scala.False, idealized.scala.PureBooleanDemo, idealized.scala.Boolean, idealized.scala.True[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Set(NthElemDemo)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: conslist.v3.test, conslist.v3.Main, conslist.v3.Nil, conslist.v3.Cons, conslist.v3.List[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding NthElemDemo by conslist.v3.Nil[0m
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated macros due to upstream dependencies change: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mNo classes were invalidated.[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: NthElemDemo[0m
+[0m[[0m[0mdebug[0m] [0m[0mcompilation cycle 2[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to /Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mReturning already retrieved and compiled bridge: /Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala2-sbt-bridge/2.13.12/scala2-sbt-bridge-2.13.12.jar.[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] Running cached compiler 33d32bb5 for Scala compiler version 2.13.12[0m
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] The Scala compiler is invoked with:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	-classpath[0m
+[0m[[0m[0mdebug[0m] [0m[0m	/Users/muntasirraihanrahman/Documents/ScalaFP/target/scala-2.13/classes:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.12/scala-library-2.13.12.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor-typed_2.13/2.8.0/akka-actor-typed_2.13-2.8.0.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.8.0/akka-actor_2.13-2.8.0.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.13/2.8.0/akka-slf4j_2.13-2.8.0.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar:/Users/muntasirraihanrahman/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mCompilation failed (CompilerInterface)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m

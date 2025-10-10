@@ -1,2 +1,16 @@
-[0m[[0m[33mwarn[0m] [0m[0m1 deprecation (since 2.13.4); re-run with -deprecation for details[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/muntasirraihanrahman/Documents/ScalaFP/nth_elem.scala:14:60: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Nil[Int][0m
+[0m[[0m[31merror[0m] [0m[0m required: conslist.v3.List[?][0m
+[0m[[0m[31merror[0m] [0m[0m        val list1 = new Cons(10, new Cons(20, new Cons(30, new Nil[Int])))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/muntasirraihanrahman/Documents/ScalaFP/nth_elem.scala:36:28: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Nil[String][0m
+[0m[[0m[31merror[0m] [0m[0m required: conslist.v3.List[?][0m
+[0m[[0m[31merror[0m] [0m[0m            List.select(0, emptyList)[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/muntasirraihanrahman/Documents/ScalaFP/nth_elem.scala:42:56: polymorphic expression cannot be instantiated to expected type;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : [T]Nil[T][0m
+[0m[[0m[31merror[0m] [0m[0m required: conslist.v3.List[?][0m
+[0m[[0m[31merror[0m] [0m[0m        val list = new Cons(1, new Cons(2, new Cons(3, new Nil)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m

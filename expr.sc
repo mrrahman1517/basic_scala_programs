@@ -42,6 +42,8 @@ trait Expr {
     def varValue: String    // Returns variable name (only valid for Var)
     def leftOp: Expr        // Returns left operand (only valid for Sum/Prod)
     def rightOp: Expr       // Returns right operand (only valid for Sum/Prod)
+
+    def eval: Int 
 }
 
 /**
@@ -63,6 +65,8 @@ class Number(n: Int) extends Expr {
     def leftOp: Expr = throw new Error("Number.leftOp")
     def rightOp: Expr = throw new Error("Number.rightOp")
     def varValue: String = throw new Error("Number.varValue")
+
+    def eval: Int = n 
 }
 
 /**
@@ -85,6 +89,8 @@ class Sum(e1: Expr, e2: Expr) extends Expr {
     // These methods should never be called on a Sum - they throw errors
     def numValue: Int = throw new Error("Sum.numValue")
     def varValue: String = throw new Error("Sum.varValue")
+
+    def eval: Int = e1.eval + e2.eval
 }
 
 /**
@@ -107,6 +113,8 @@ class Prod(e1: Expr, e2: Expr) extends Expr {
     // These methods should never be called on a Prod - they throw errors
     def numValue: Int = throw new Error("Prod.numValue")
     def varValue: String = throw new Error("Prod.varValue")
+
+    def eval: Int = e1.eval * e2.eval
 }
 
 /**
@@ -129,6 +137,8 @@ class Var(x: String) extends Expr {
     def numValue: Int = throw new Exception("Var.numValue")
     def leftOp: Expr = throw new Error("Var.leftOp")
     def rightOp: Expr = throw new Error("Var.rightOp")
+
+    def eval: Int = throw new Error("Var.eval")
 }
 
 /**
@@ -239,6 +249,8 @@ val n1 = new Number(5)
 val n2 = new Number(6)
 val e1 = new Sum(n1, n2)
 
+println("use built in eval: " + e1.eval)
+
 println(s"Numbers: n1 = ${print(n1)}, n2 = ${print(n2)}")
 println(s"Sum: ${print(e1)} = ${eval(e1)}")
 assert(eval(e1) == 11)
@@ -251,6 +263,7 @@ val directSum = new Sum(new Number(35), new Number(23))
 println(s"Expression: ${print(directSum)}")
 println(s"Result: ${eval(directSum)}")
 println()
+println("use built in eval: " + directSum.eval)
 
 // Test 3: Nested expressions with addition
 println("--- Test 3: Nested Addition ---")
@@ -262,6 +275,7 @@ println(s"e2 = ${print(e2)}")
 println(s"eval(e2) = ${eval(e2)}")
 println(s"Verification: eval(e1) + eval(n3) = ${eval(e1)} + ${eval(n3)} = ${eval(e1) + eval(n3)}")
 assert(eval(e2) == eval(e1) + eval(n3))
+println("use built in eval: " + e2.eval)
 println("✓ Nested addition test passed")
 println()
 
@@ -524,3 +538,6 @@ println()
  * 
  * This implementation shows classical OOP approach vs functional alternatives.
  */
+
+// function decomposition using pattern matching
+
