@@ -55,6 +55,24 @@ trait List[+T] {
     def length: Int 
 
     def prepend[U >: T](elem: U): List[U] = new Cons(elem, this)
+    def map[U](f: T => U): List[U] = this match {
+        case Nil => Nil
+        case cons: Cons[T] => new Cons(f(cons.head), cons.tail.map(f))
+    }
+    
+    /**
+     * Converts the list to a readable string representation
+     * @return string representation like "List(1, 2, 3)" for display
+     */
+    override def toString: String = {
+        def listToString(xs: List[T]): String = xs match {
+            case Nil => ""
+            case cons: Cons[T] => 
+                if (cons.tail.isEmpty) cons.head.toString
+                else cons.head.toString + ", " + listToString(cons.tail)
+        }
+        "List(" + listToString(this) + ")"
+    }
 }
 
 /**
@@ -168,6 +186,9 @@ object List {
      */
     def apply[T](x: T): List[T] = new Cons(x, Nil)
 }
+
+def scaleList(xs: List[Double], factor: Double) = 
+            xs.map(x => x * factor)
 
 /**
  * Main demo object - demonstrates the usage of the generic cons list
@@ -393,5 +414,18 @@ object Main {
         println("\n=== Apply Method Tests Complete ===")
         println("All apply methods (empty, single, double) working correctly!")
         println("Factory method pattern successfully implemented with Scala syntactic sugar!")
+
+        //def scaleList(xs: List[Double], factor: Double) = 
+        //    xs map (x => x * factor)
+
+        println("test hof map...")
+        val testDoubles = new Cons(1.0, new Cons(3.0, new Cons(5.0, Nil)))
+        println(s"Original list: $testDoubles")
+        val scaledResult = scaleList(testDoubles, 2)
+        println(s"Scaled by 2:   $scaledResult")
+        
+        // Test with different factor
+        val scaledBy3 = scaleList(testDoubles, 3.5)
+        println(s"Scaled by 3.5: $scaledBy3")
     }
 }
