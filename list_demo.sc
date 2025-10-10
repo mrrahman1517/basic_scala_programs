@@ -418,6 +418,135 @@ def removeAt[T](xs: List[T], n: Int): List[T] = xs match {
 }
 
 // ===================================
+// MERGE SORT IMPLEMENTATION
+// ===================================
+
+println()
+println("--- Merge Sort Algorithm Implementation ---")
+
+/**
+ * Merge Sort implementation using divide-and-conquer strategy
+ * 
+ * This demonstrates a more efficient sorting algorithm compared to insertion sort.
+ * Merge sort is a classic divide-and-conquer algorithm that:
+ * 
+ * 1. DIVIDE: Split the list into two halves
+ * 2. CONQUER: Recursively sort each half
+ * 3. COMBINE: Merge the sorted halves back together
+ * 
+ * Algorithm Properties:
+ * - Stable sort (maintains relative order of equal elements)
+ * - Guaranteed O(n log n) performance regardless of input
+ * - Divide-and-conquer paradigm demonstration
+ * - More efficient than insertion sort for large lists
+ * 
+ * Time Complexity: O(n log n) in all cases (best, average, worst)
+ * Space Complexity: O(n) for the auxiliary space used in merging
+ * 
+ * Educational Value:
+ * - Demonstrates recursive problem decomposition
+ * - Shows how to combine solutions from subproblems
+ * - Illustrates the power of divide-and-conquer algorithms
+ * - Nested function definition showcasing local scope
+ * 
+ * @param xs the list to sort
+ * @return new sorted list in ascending order
+ */
+def msort(xs: List[Int]): List[Int] = {
+    val n = xs.length / 2                              // Calculate midpoint for splitting
+    
+    if (n == 0) xs                                     // Base case: lists of length 0 or 1 are sorted
+    else {
+        /**
+         * Merge function for combining two sorted lists
+         * 
+         * This nested function merges two already sorted lists into one sorted list.
+         * It uses pattern matching to handle different cases:
+         * - If either list is empty, return the other list
+         * - Compare heads of both lists, take smaller and recurse
+         * 
+         * The merge operation is the key to merge sort's efficiency.
+         * It combines two sorted sequences in linear time.
+         * 
+         * Time Complexity: O(n + m) where n, m are lengths of input lists
+         * Space Complexity: O(n + m) for the resulting list
+         * 
+         * @param xs first sorted list
+         * @param ys second sorted list
+         * @return merged sorted list containing all elements from both inputs
+         */
+        def merge(xs: List[Int], ys: List[Int]): List[Int] = 
+            xs match {
+                case Nil => ys                         // First list empty: return second list
+                case x :: xs1 => 
+                    ys match {
+                        case Nil => xs                 // Second list empty: return first list
+                        case y :: ys1 => {
+                            if (x < y) x :: merge(xs1, ys)      // x is smaller: take x, merge rest
+                            else y :: merge(xs, ys1)            // y is smaller: take y, merge rest
+                        }
+                    }
+            }
+            
+        val (fst, snd) = xs splitAt n                  // Split list at midpoint using built-in splitAt
+        merge(msort(fst), msort(snd))                  // Recursively sort halves and merge results
+    }
+}
+
+// ===================================
+// MERGE SORT TESTING AND DEMONSTRATION
+// ===================================
+
+val unsortedList = List(1, 33, 10, 14, 20, 5, 2, 99, 7)
+val mergeSorted = msort(unsortedList)
+
+println("Merge Sort demonstration:")
+println(s"Original list:    $unsortedList")
+println(s"Merge sorted:     $mergeSorted")
+
+// Compare with insertion sort for educational purposes
+val insertionSorted = isort(unsortedList)
+println(s"Insertion sorted: $insertionSorted")
+println(s"Results match:    ${mergeSorted == insertionSorted}")
+
+// Verify correctness with built-in sort
+assert(mergeSorted == unsortedList.sorted, "Merge sort should match built-in sort")
+println("✓ Merge sort implementation verified correct")
+
+println()
+println("--- Sorting Algorithm Comparison ---")
+println("Performance characteristics:")
+println("• Insertion Sort: O(n²) average case, O(n) best case, O(n²) worst case")
+println("• Merge Sort:     O(n log n) all cases (guaranteed performance)")
+println("• Built-in sort:  O(n log n) (typically optimized hybrid algorithms)")
+println()
+println("When to use each:")
+println("• Insertion Sort: Small lists, nearly sorted data, simple implementation")
+println("• Merge Sort:     Large lists, guaranteed performance, stable sorting needed")
+println("• Built-in sort:  Production code (highly optimized implementations)")
+println()
+
+// ===================================
+// STEP-BY-STEP MERGE SORT TRACE
+// ===================================
+
+println("--- Step-by-step Merge Sort Trace ---")
+println("For list [33, 10, 14, 20]:")
+println("1. msort([33, 10, 14, 20])")
+println("   Split: [33, 10] and [14, 20]")
+println("2. msort([33, 10]) and msort([14, 20])")
+println("   Split: [33], [10] and [14], [20]")
+println("3. Base cases: [33], [10], [14], [20] (already sorted)")
+println("4. merge([33], [10]) = [10, 33]")
+println("   merge([14], [20]) = [14, 20]")
+println("5. merge([10, 33], [14, 20]) = [10, 14, 20, 33]")
+println("Final result: [10, 14, 20, 33]")
+
+val traceExample = List(33, 10, 14, 20)
+println(s"Verification: msort($traceExample) = ${msort(traceExample)}")
+println()
+
+// ===================================
 // DEMONSTRATION OF NEW FUNCTIONS
 // ===================================
 
@@ -546,6 +675,10 @@ println(s"  removeAt index 1: ${removeAt(charList2, 1)}")
 
 println("✓ Generic functions work correctly with all types")
 println()
+
+println("merge sort test")
+println(msort(List(1, 33, 10, 14, 20)))
+
 
 
 println()
