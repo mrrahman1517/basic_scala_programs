@@ -187,8 +187,16 @@ object List {
     def apply[T](x: T): List[T] = new Cons(x, Nil)
 }
 
-def scaleList(xs: List[Double], factor: Double) = 
-            xs.map(x => x * factor)
+/**
+ * Utility functions for list operations
+ */
+object ListUtils {
+    /**
+     * Scales all elements in a list by a given factor
+     */
+    def scaleList(xs: List[Double], factor: Double): List[Double] = 
+        xs.map(x => x * factor)
+}
 
 /**
  * Main demo object - demonstrates the usage of the generic cons list
@@ -421,11 +429,11 @@ object Main {
         println("test hof map...")
         val testDoubles = new Cons(1.0, new Cons(3.0, new Cons(5.0, Nil)))
         println(s"Original list: $testDoubles")
-        val scaledResult = scaleList(testDoubles, 2)
+        val scaledResult = ListUtils.scaleList(testDoubles, 2)
         println(s"Scaled by 2:   $scaledResult")
         
         // Test with different factor
-        val scaledBy3 = scaleList(testDoubles, 3.5)
+        val scaledBy3 = ListUtils.scaleList(testDoubles, 3.5)
         println(s"Scaled by 3.5: $scaledBy3")
     }
 }

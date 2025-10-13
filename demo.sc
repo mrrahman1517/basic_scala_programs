@@ -45,7 +45,8 @@ def abs (x: Double) = if (x >= 0) x else -x
 println(abs(1))
 println(abs(-3))
 
-def loop: Boolean = loop
+// Commented out infinite recursion - would cause stack overflow
+// def loop: Boolean = loop
 
 def and (x: Boolean, y: => Boolean): Boolean = 
                             if (x) y else false
@@ -60,7 +61,8 @@ def or (x: Boolean, y: Boolean): Boolean = if x == true then true else y
 //println (or (true, false))
 //println (or (true, true))
 //println(and ())
-println(and (false, loop))
+// Commented out since loop function was removed to prevent infinite recursion
+// println(and (false, loop))
 def sqrt (x: Double) : Double = {
     def sqrtIter(guess: Double): Double = 
         if (isGoodEnough(guess)) guess
