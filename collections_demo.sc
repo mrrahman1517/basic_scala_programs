@@ -336,8 +336,10 @@ println(s"Function: String => List[Char] (toList)")
 
 val flatMapResult1 = words.flatMap(charFunction)
 val mapFlattenResult1 = words.map(charFunction).flatten
+val mapResult1 = words.map(charFunction)
 
 println(s"words.flatMap(_.toList):           $flatMapResult1")
+println(s"words.map(_.toList):               $mapResult1")
 println(s"words.map(_.toList).flatten:       $mapFlattenResult1") 
 println(s"Results equal: ${flatMapResult1 == mapFlattenResult1}")
 
@@ -350,9 +352,11 @@ println(s"numbers: $numbers")
 println(s"Function: Int => Range (1 to n)")
 
 val flatMapResult2 = numbers.flatMap(rangeFunction)
+val mapResult2 = numbers.map(rangeFunction)
 val mapFlattenResult2 = numbers.map(rangeFunction).flatten
 
 println(s"numbers.flatMap(n => 1 to n):      $flatMapResult2")
+println(s"numbers.map(n => 1 to n):  ${mapResult2}")
 println(s"numbers.map(n => 1 to n).flatten:  $mapFlattenResult2")
 println(s"Results equal: ${flatMapResult2 == mapFlattenResult2}")
 
