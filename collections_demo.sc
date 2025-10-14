@@ -310,3 +310,83 @@ println((1 to 20).filter(x => isPrime(x)))
  * - Collection transformation pipelines
  * - Mathematical reasoning with code
  */
+
+val n = 7
+
+println((1 until n).map(i=> (1 until i).map(j => (i, j))).flatten)
+
+// ===================================
+// FLATMAP EQUIVALENCE VERIFICATION
+// ===================================
+
+/**
+ * FUNDAMENTAL EQUATION: xs flatMap f = (xs map f).flatten
+ * 
+ * This equivalence shows that flatMap is the composition of map and flatten.
+ * Let's verify this with concrete examples.
+ */
+
+// Example 1: String to character list transformation
+val words = List("hello", "world", "scala")
+val charFunction = (s: String) => s.toList  // String => List[Char]
+
+println("=== Example 1: String to Characters ===")
+println(s"words: $words")
+println(s"Function: String => List[Char] (toList)")
+
+val flatMapResult1 = words.flatMap(charFunction)
+val mapFlattenResult1 = words.map(charFunction).flatten
+
+println(s"words.flatMap(_.toList):           $flatMapResult1")
+println(s"words.map(_.toList).flatten:       $mapFlattenResult1") 
+println(s"Results equal: ${flatMapResult1 == mapFlattenResult1}")
+
+// Example 2: Number to range transformation
+val numbers = List(1, 2, 3, 4)
+val rangeFunction = (n: Int) => 1 to n  // Int => Range
+
+println(s"\n=== Example 2: Number to Ranges ===")
+println(s"numbers: $numbers")
+println(s"Function: Int => Range (1 to n)")
+
+val flatMapResult2 = numbers.flatMap(rangeFunction)
+val mapFlattenResult2 = numbers.map(rangeFunction).flatten
+
+println(s"numbers.flatMap(n => 1 to n):      $flatMapResult2")
+println(s"numbers.map(n => 1 to n).flatten:  $mapFlattenResult2")
+println(s"Results equal: ${flatMapResult2 == mapFlattenResult2}")
+
+// Example 3: Nested list processing  
+val nestedData = List(List(1, 2), List(3, 4, 5), List(6))
+val doubleFunction = (xs: List[Int]) => xs.map(_ * 2)  // List[Int] => List[Int]
+
+println(s"\n=== Example 3: Nested List Processing ===")
+println(s"nestedData: $nestedData")
+println(s"Function: List[Int] => List[Int] (double each element)")
+
+val flatMapResult3 = nestedData.flatMap(doubleFunction)
+val mapFlattenResult3 = nestedData.map(doubleFunction).flatten
+
+println(s"nestedData.flatMap(_.map(_ * 2)):        $flatMapResult3")
+println(s"nestedData.map(_.map(_ * 2)).flatten:    $mapFlattenResult3")
+println(s"Results equal: ${flatMapResult3 == mapFlattenResult3}")
+
+// Example 4: Option/Maybe pattern (handling potential null/empty values)
+val optionalNumbers = List(Some(1), None, Some(2), Some(3), None)
+val safeDoubleFunction = (opt: Option[Int]) => opt.map(_ * 2).toList  // Option[Int] => List[Int]
+
+println(s"\n=== Example 4: Option Processing ===")
+println(s"optionalNumbers: $optionalNumbers") 
+println(s"Function: Option[Int] => List[Int] (safely double if present)")
+
+val flatMapResult4 = optionalNumbers.flatMap(safeDoubleFunction)
+val mapFlattenResult4 = optionalNumbers.map(safeDoubleFunction).flatten
+
+println(s"optionalNumbers.flatMap(_.map(_ * 2).toList):       $flatMapResult4")
+println(s"optionalNumbers.map(_.map(_ * 2).toList).flatten:   $mapFlattenResult4")
+println(s"Results equal: ${flatMapResult4 == mapFlattenResult4}")
+
+println(s"\n✅ EQUATION VERIFIED: xs flatMap f ≡ (xs map f).flatten")
+println("This fundamental equivalence demonstrates that flatMap is the composition of map and flatten!")
+
+val xs1 = Vector(1, 2, 3, 4)
