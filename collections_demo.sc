@@ -314,6 +314,12 @@ println((1 to 20).filter(x => isPrime(x)))
 val n = 7
 
 println((1 until n).map(i=> (1 until i).map(j => (i, j))).flatten)
+// equivalent
+println((1 until n).flatMap(i => (1 until i).map(j => (i, j))).filter(pair => 
+    isPrime(pair._1 + pair._2)))
+
+assert((1 until n).map(i=> (1 until i).map(j => (i, j))).flatten ==
+    (1 until n).flatMap(i => (1 until i).map(j => (i, j))))
 
 // ===================================
 // FLATMAP EQUIVALENCE VERIFICATION
@@ -394,3 +400,79 @@ println(s"\n✅ EQUATION VERIFIED: xs flatMap f ≡ (xs map f).flatten")
 println("This fundamental equivalence demonstrates that flatMap is the composition of map and flatten!")
 
 val xs1 = Vector(1, 2, 3, 4)
+
+println((1 until n).flatMap(i => (1 until i).map(j => (i, j))).filter(pair => 
+    isPrime(pair._1 + pair._2)))
+
+case class Person(name: String, age: Int)
+
+val p1 = Person("RogerPenrose", 90)
+val p2 = Person("Paul Dirac", 100)
+val p3 = Person("John Doe", 10)
+
+val persons = Vector(p1, p2, p3)
+println(persons.filter(p => p.age > 20).map(p => p.name))
+println(for (p <- persons if p.age > 20) yield p.name)
+
+val m = 11
+
+println(
+for {
+    i <- 1 until m
+    j <- 1 until i 
+    if isPrime(i + j) 
+} yield (i, j))
+
+def innerProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
+    (for {
+        (x,y) <- xs zip ys
+    } yield x * y).sum
+}
+
+val xs11 = Vector(1.0, 2.0)
+val ys11 = Vector(3.0, 4.0)
+
+println(innerProduct(xs11, ys11))
+
+assert(innerProduct(xs11, ys11) == dotProduct(xs11, ys11))
+
+println((for {
+        (x,y) <- xs11 zip ys11
+    } yield x * y).sum)
+
+// Sets
+
+val fruit = Set("apple", "banana", "pear", "mango")
+print(fruit)
+
+val s1 = (1 to 6).toSet
+
+// IMPORTANT: Sets are IMMUTABLE in Scala!
+// map() creates a NEW set, it doesn't modify the original
+println(s"Original set s1: $s1")
+println(s"s1.map(_ + 2): ${s1.map(_ + 2)}")  // Creates new set with +2
+println(s"s1 after map operation: $s1")      // Original unchanged!
+
+// To "update" the set, you need to assign the result to a new variable
+val s1Plus2 = s1.map(_ + 2)
+println(s"New set s1Plus2: $s1Plus2")
+
+// Alternative: reassign to the same variable (shadows the original)
+// val s1 = s1.map(_ + 2)  // This would "update" s1 by creating a new binding
+
+// ===================================
+// IMMUTABILITY DEMONSTRATION
+// ===================================
+
+/**
+ * Key insight: This demonstrates IMMUTABILITY in functional programming!
+ * - Original collections are never modified
+ * - Operations return NEW collections with the transformations applied
+ * - This prevents side effects and makes code more predictable
+ * - Multiple operations can be chained safely: s1.map(_ + 2).filter(_ > 5).map(_ * 2)
+ */
+
+// Chaining operations (all return new collections)
+val chainedResult = s1.map(_ + 2).filter(_ > 5).map(_ * 2)
+println(s"Chained operations s1.map(_ + 2).filter(_ > 5).map(_ * 2): $chainedResult")
+println(s"Original s1 still unchanged: $s1")
