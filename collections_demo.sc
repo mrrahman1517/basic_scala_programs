@@ -6,12 +6,34 @@
 /**
  * This file demonstrates working with Scala collections, particularly Arrays,
  * and shows important gotchas when comparing collections.
+ * 
+ * LEARNING OBJECTIVES:
+ * - Understand different collection types (Arrays, Lists, Vectors, Sets, Maps)
+ * - Learn collection comparison pitfalls and correct approaches
+ * - Master higher-order functions (map, filter, flatMap, fold, etc.)
+ * - Grasp immutability principles in functional programming
+ * - Apply mathematical operations using collection methods
+ * - Understand performance characteristics of different collections
  */
 
+// ===================================
+// ARRAY BASICS AND TRANSFORMATIONS
+// ===================================
+
+/**
+ * Arrays in Scala are mutable, indexed collections with O(1) random access.
+ * They correspond directly to Java arrays and offer excellent performance
+ * for numerical computations and when you need direct indexing.
+ */
 val xs: Array[Int] = Array(1, 2, 3)
 
-// Apply map transformation
-val mapped = xs.map(x => 2 * x)
+/**
+ * The map function applies a transformation to every element, returning a new Array.
+ * Syntax: collection.map(element => transformation)
+ * Alternative syntax: collection.map(_ * 2) using placeholder syntax
+ */
+val mapped = xs.map(x => 2 * x)  // Explicit parameter naming
+// val mapped = xs.map(_ * 2)    // Equivalent using placeholder syntax
 
 // IMPORTANT: Arrays cannot be compared with == for content equality!
 // == compares object references, not content for Arrays
@@ -33,67 +55,135 @@ println(s"arr1.sameElements(arr2): ${arr1.sameElements(arr2)}")  // true (same c
 println(s"Original array: ${xs.mkString("Array(", ", ", ")")}")
 println(s"Mapped array:   ${mapped.mkString("Array(", ", ", ")")}")
 
-// More collection operations
-println(s"Array sum: ${xs.sum}")
-println(s"Array length: ${xs.length}")
-println(s"Array max: ${xs.max}")
-println(s"Array min: ${xs.min}")
+// ===================================
+// ARRAY AGGREGATE OPERATIONS
+// ===================================
 
-// Demonstrate filter operation
-val evens = xs.filter(_ % 2 == 0)
+/**
+ * Aggregate operations reduce collections to single values.
+ * These operations traverse the entire collection once.
+ */
+println(s"Array sum: ${xs.sum}")        // Adds all elements: 1 + 2 + 3 = 6
+println(s"Array length: ${xs.length}")  // Number of elements: 3
+println(s"Array max: ${xs.max}")        // Largest element: 3
+println(s"Array min: ${xs.min}")        // Smallest element: 1
+
+/**
+ * Filter operation: keeps only elements that satisfy a predicate.
+ * Predicate: A function that returns true/false for each element.
+ * Here we use modulo operator (%) to find even numbers.
+ */
+val evens = xs.filter(_ % 2 == 0)  // Keep elements where remainder of division by 2 is 0
 println(s"Even numbers: ${evens.mkString("Array(", ", ", ")")}")
 
-// Demonstrate fold operation
+/**
+ * Fold operation: reduces collection using a binary operation.
+ * Syntax: collection.fold(initialValue)(binaryOperation)
+ * fold(1)(_ * _) means: start with 1, then multiply all elements together
+ * This computes the factorial-like product: 1 * 1 * 2 * 3 = 6
+ */
 val product = xs.fold(1)(_ * _)
 println(s"Product of elements: $product")
 
 // ===================================
-// ADDITIONAL COLLECTION DEMONSTRATIONS
+// IMMUTABLE COLLECTIONS: LISTS
 // ===================================
 
-// Working with Lists (immutable, content-comparable)
+/**
+ * Lists are immutable, linked lists - the fundamental collection in functional programming.
+ * Key characteristics:
+ * - Immutable: operations create new lists, never modify existing ones
+ * - Linked structure: efficient prepending (O(1)), less efficient random access (O(n))
+ * - Content equality: == compares actual elements, not references
+ * - Recursive structure: perfect for recursive algorithms
+ */
 val list1 = List(1, 2, 3, 4, 5)
 val list2 = List(1, 2, 3, 4, 5)
 println(s"\nList comparison:")
-println(s"list1 == list2: ${list1 == list2}")  // true for Lists!
+println(s"list1 == list2: ${list1 == list2}")  // true for Lists! (unlike Arrays)
 
-// List operations
-println(s"List doubled: ${list1.map(_ * 2)}")
-println(s"List filtered (>3): ${list1.filter(_ > 3)}")
-println(s"List take 3: ${list1.take(3)}")
-println(s"List drop 2: ${list1.drop(2)}")
+/**
+ * Common List operations - all return NEW lists (immutability principle)
+ */
+println(s"List doubled: ${list1.map(_ * 2)}")           // Transform: multiply each by 2
+println(s"List filtered (>3): ${list1.filter(_ > 3)}") // Filter: keep elements > 3  
+println(s"List take 3: ${list1.take(3)}")              // Take: first 3 elements
+println(s"List drop 2: ${list1.drop(2)}")              // Drop: skip first 2 elements
 
-// Working with Vectors (indexed sequences)
+// ===================================
+// INDEXED SEQUENCES: VECTORS  
+// ===================================
+
+/**
+ * Vectors are immutable, indexed collections with excellent performance.
+ * Key advantages:
+ * - Efficient random access: O(log32 n) ≈ O(1) for practical purposes
+ * - Efficient updates: structural sharing makes copies fast
+ * - Balanced performance: good for both sequential and random access
+ * - Immutable: like Lists, operations return new Vectors
+ */
 val vec = Vector(10, 20, 30, 40)
 println(s"\nVector operations:")
 println(s"Vector: $vec")
-println(s"Vector(1): ${vec(1)}")  // indexed access
-println(s"Vector updated: ${vec.updated(1, 99)}")  // immutable update
+println(s"Vector(1): ${vec(1)}")  // Fast indexed access - O(log32 n)
+println(s"Vector updated: ${vec.updated(1, 99)}")  // Returns NEW vector with change
 
-// Working with Sets (unique elements)
-val set1 = Set(1, 2, 3, 2, 1)  // duplicates removed
+// ===================================
+// SETS: UNIQUE ELEMENT COLLECTIONS
+// ===================================
+
+/**
+ * Sets are collections that contain no duplicate elements.
+ * Mathematical set operations are naturally supported.
+ * Key characteristics:
+ * - No duplicates: automatically removes duplicate elements
+ * - Unordered: elements have no specific order (though some implementations may appear ordered)
+ * - Fast membership testing: O(1) for HashSet, O(log n) for TreeSet
+ * - Set algebra operations: union, intersection, difference
+ */
+val set1 = Set(1, 2, 3, 2, 1)  // duplicates automatically removed → Set(1, 2, 3)
 val set2 = Set(3, 4, 5)
 println(s"\nSet operations:")
-println(s"Set with duplicates: $set1")
-println(s"Set union: ${set1 ++ set2}")
-println(s"Set intersection: ${set1.intersect(set2)}")
-println(s"Set difference: ${set1.diff(set2)}")
+println(s"Set with duplicates: $set1")                    // Only unique elements remain
+println(s"Set union: ${set1 ++ set2}")                   // All elements from both sets
+println(s"Set intersection: ${set1.intersect(set2)}")    // Common elements only  
+println(s"Set difference: ${set1.diff(set2)}")           // Elements in set1 but not set2
 
-// Working with Maps (key-value pairs)
+// ===================================
+// MAPS: KEY-VALUE ASSOCIATIONS
+// ===================================
+
+/**
+ * Maps store key-value pairs, like dictionaries or hash tables.
+ * Key characteristics:
+ * - Immutable: operations return new Maps
+ * - Unique keys: each key appears at most once
+ * - Fast lookup: O(1) for HashMap, O(log n) for TreeMap
+ * - Functional operations: can be filtered, mapped, folded like other collections
+ * - Tuple syntax: "key" -> value creates a tuple (key, value)
+ */
 val grades = Map("Alice" -> 95, "Bob" -> 87, "Charlie" -> 92)
 println(s"\nMap operations:")
 println(s"Grades: $grades")
-println(s"Alice's grade: ${grades("Alice")}")
-println(s"All names: ${grades.keys}")
-println(s"All grades: ${grades.values}")
-println(s"High achievers: ${grades.filter(_._2 > 90)}")
+println(s"Alice's grade: ${grades("Alice")}")              // Direct key lookup
+println(s"All names: ${grades.keys}")                      // Set of all keys
+println(s"All grades: ${grades.values}")                   // Collection of all values
+println(s"High achievers: ${grades.filter(_._2 > 90)}")    // Filter by value using tuple syntax
 
-// Collection conversion examples
+// ===================================
+// COLLECTION CONVERSIONS
+// ===================================
+
+/**
+ * Scala collections can be easily converted between different types.
+ * Each collection type has toX methods for conversion.
+ * Conversions may change performance characteristics and behavior.
+ */
 println(s"\nCollection conversions:")
-println(s"Array to List: ${xs.toList}")
-println(s"List to Vector: ${list1.toVector}")
-println(s"List to Set: ${list1.toSet}")
-println(s"Array to Set: ${xs.toSet}")
+println(s"Array to List: ${xs.toList}")        // Mutable array → immutable list
+println(s"List to Vector: ${list1.toVector}")  // Linked list → indexed vector  
+println(s"List to Set: ${list1.toSet}")        // Ordered list → unordered set (removes duplicates)
+println(s"Array to Set: ${xs.toSet}")          // Array → set (removes duplicates, changes access pattern)
 
 println(s"\n=== Collections Demo Complete ===")
 println("Key takeaway: Arrays use sameElements(), Lists/Vectors/Sets use == for content comparison!") 
@@ -105,135 +195,227 @@ println("Key takeaway: Arrays use sameElements(), Lists/Vectors/Sets use == for 
 /**
  * Strings in Scala are sequences of characters, so collection operations work on them too.
  * This section demonstrates advanced operations like filtering, zipping, and higher-order functions.
+ * 
+ * STRING AS COLLECTION CONCEPT:
+ * - String implements Seq[Char] - it's a sequence of characters
+ * - All collection methods (map, filter, exists, forall) work on strings
+ * - Results can be strings or collections depending on the operation
+ * - This enables powerful text processing using functional programming
  */
 
 // Working with strings as character sequences
 val ys: String = "Functional Analysis Topology"
 
-// Filter characters based on predicates
-ys.filter(_.isUpper)  // Expression result (not printed)
+/**
+ * Character filtering operations - strings support all collection predicates
+ */
+ys.filter(_.isUpper)  // Expression result (not printed) - returns String with uppercase chars
 
 // Print uppercase characters only
-println(ys.filter(_.isUpper))
+println(ys.filter(_.isUpper))  // Result: "FAT" - all uppercase characters
 
-// Check if any character satisfies a condition (existential quantification)
-println(ys.exists(c => c.isUpper))  // true - at least one uppercase
-
-// Check if all characters satisfy a condition (universal quantification)  
-println(ys.forall(c => c.isUpper))  // false - not all are uppercase
+/**
+ * Quantifier operations - mathematical logic applied to characters
+ * - exists: ∃ (existential quantifier) - "there exists at least one"  
+ * - forall: ∀ (universal quantifier) - "for all" or "every element"
+ */
+println(ys.exists(c => c.isUpper))  // true - ∃ at least one uppercase letter
+println(ys.forall(c => c.isUpper))  // false - ∀ characters are NOT uppercase
 
 // ===================================
 // ZIPPING AND UNZIPPING OPERATIONS
 // ===================================
 
 /**
- * Zip combines two collections element-wise into pairs.
- * Useful for parallel processing of collections.
+ * ZIPPING OPERATIONS - Parallel Collection Combination
+ * 
+ * Zipping combines two collections element-wise into pairs (tuples).
+ * This is particularly useful for:
+ * - Creating associations between related data
+ * - Parallel processing of multiple sequences  
+ * - Coordinate pairs, key-value associations
+ * - Mathematical vector operations
+ * 
+ * BEHAVIOR NOTES:
+ * - Zip stops at the shorter collection's length
+ * - Creates List[(A,B)] where A and B are element types
+ * - Preserves order from both collections
  */
 
 // Zip a list with a string (creates pairs of (Int, Char))
+// Note: Will only create pairs up to List.length (3), ignoring remaining chars
 val pairs = List(1, 2, 3) zip ys
-println(pairs)
+println(pairs)  // List((1,F), (2,u), (3,n)) - Int-Char pairs
 
-// Unzip separates pairs back into two collections
-println(pairs.unzip)
+/**
+ * UNZIPPING OPERATIONS - Separating Paired Collections
+ * Unzip is the inverse of zip - separates pairs back into two collections
+ * Returns a tuple (Collection[A], Collection[B])
+ */
+println(pairs.unzip)  // (List(1, 2, 3), List(F, u, n)) - separated back
 
 // ===================================
 // BIGRAM GENERATION (SLIDING WINDOW)
 // ===================================
 
 /**
- * Bigrams are consecutive character pairs, useful in text analysis and linguistics.
- * This demonstrates the sliding window pattern using zip with tail.
+ * SLIDING WINDOW PATTERN - Consecutive Element Analysis
+ * 
+ * Bigrams are consecutive character pairs, essential in:
+ * - Natural language processing (NLP)
+ * - Text analysis and linguistics  
+ * - Pattern recognition in sequences
+ * - Markov chain analysis
+ * 
+ * IMPLEMENTATION TECHNIQUE:
+ * - zip string with its tail (string.drop(1))
+ * - Creates overlapping pairs: "abc" → (a,b), (b,c)
+ * - Result length = original.length - 1
  */
 
 // Create bigrams by zipping string with its tail (all consecutive character pairs)
 val bigrams = ys zip ys.tail
-println(bigrams)
+println(bigrams)  // All consecutive character pairs from the string
 
 /**
  * Reusable bigram generator function.
  * Takes any string and returns all consecutive character pairs.
+ * Useful for text analysis pipelines.
  */
 def bigramBuilder(word: String) = {
-    word zip word.tail 
+    word zip word.tail  // Generic sliding window of size 2
 }
 
 // Test bigram generation with a simple word
-println(bigramBuilder("hello"))
+println(bigramBuilder("hello"))  // List((h,e), (e,l), (l,l), (l,o)) - sliding pairs
 
 // ===================================
 // FLATMAP AND ADVANCED TRANSFORMATIONS
 // ===================================
 
 /**
- * FlatMap applies a function that returns a collection and flattens the result.
- * Useful for one-to-many transformations.
+ * FLATMAP - One-to-Many Transformation and Flattening
+ * 
+ * FlatMap combines map + flatten operations:
+ * 1. Applies function that returns a collection for each element
+ * 2. Flattens the resulting collection of collections
+ * 
+ * COMMON USE CASES:
+ * - Text transformation (insert separators, expand abbreviations)
+ * - Data denormalization (one record → multiple records)
+ * - Option/Either monadic operations
+ * - Graph traversal (node → connected nodes)
+ * 
+ * MATHEMATICAL NOTATION:
+ * flatMap(f) ≡ map(f).flatten
  */
 
 val s = "hello"
 
-// Insert dots between characters using flatMap
-println(s.flatMap(c => List('.', c)).toString())
+/**
+ * Character expansion example - insert dots between characters
+ * Each character 'c' becomes List('.', c), then flattened
+ * "hello" → List('.','h','.','e','.','l','.','l','.','o')
+ */
+println(s.flatMap(c => List('.', c)).toString())  // Dot-separated characters
 
 // ===================================
-// RANGE OPERATIONS
+// RANGE OPERATIONS AND ARITHMETIC PROGRESSIONS
 // ===================================
 
 /**
- * Ranges are efficient sequences of numbers with arithmetic progressions.
- * They support all collection operations without storing all elements.
+ * RANGES - Lazy Arithmetic Sequences
+ * 
+ * Ranges are memory-efficient sequences representing arithmetic progressions.
+ * Key characteristics:
+ * - Lazy evaluation - elements computed on-demand
+ * - Constant memory usage regardless of size
+ * - Support all collection operations (map, filter, fold, etc.)
+ * - Mathematical notation: {start, start+step, start+2*step, ..., end-1}
+ * 
+ * SYNTAX VARIATIONS:
+ * - Range(start, end, step) - explicit constructor
+ * - start until end by step - infix notation
+ * - start to end by step - inclusive end
  */
 
 // Range with step: Range(start, end, step) - end is exclusive
-val r = Range(1, 10, 2)  // 1, 3, 5, 7, 9
-println(r.sum)
+val r = Range(1, 10, 2)  // Arithmetic progression: 1, 3, 5, 7, 9
+println(r.sum)  // Mathematical sum of arithmetic sequence = 25
 
-// Simple range: Range(start, end) - default step is 1
-val r2 = Range(1, 6)     // 1, 2, 3, 4, 5
-println(r2.product)
+// Simple range: Range(start, end) - default step is 1  
+val r2 = Range(1, 6)     // Sequential: 1, 2, 3, 4, 5
+println(r2.product)  // Mathematical product = 1×2×3×4×5 = 120 (factorial-like)
 
 // ===================================
 // CARTESIAN PRODUCTS AND COMBINATORICS
 // ===================================
 
 /**
+ * CARTESIAN PRODUCT GENERATION
+ * 
  * Generates all combinations (Cartesian product) of two ranges.
- * Demonstrates nested flatMap/map for combinatorial operations.
+ * Mathematical definition: A × B = {(a,b) | a ∈ A, b ∈ B}
+ * 
+ * APPLICATIONS:
+ * - Grid coordinate generation
+ * - Combinatorial optimization
+ * - Game board positions
+ * - Database join operations
+ * 
+ * IMPLEMENTATION PATTERN:
+ * - Outer flatMap iterates first set
+ * - Inner map creates pairs with second set  
+ * - Result: flattened collection of all combinations
  */
 def allComb(M: Int, N: Int) = {
     (1 to M).flatMap(x => (1 to N).map(y => (x,y)))
+    // Mathematical interpretation: ∀x∈{1..M}, ∀y∈{1..N} → (x,y)
 } 
 
-// Generate all pairs from 1x1 to 2x2 grid
-println(allComb(2, 2))
+// Generate all pairs from 1×1 to 2×2 grid
+println(allComb(2, 2))  // List((1,1), (1,2), (2,1), (2,2)) - complete 2×2 grid
 
 // ===================================
 // VECTOR OPERATIONS (LINEAR ALGEBRA)
 // ===================================
 
 /**
- * Mathematical vector operations using Scala collections.
- * Demonstrates practical applications of zip and map.
+ * MATHEMATICAL VECTOR OPERATIONS
+ * 
+ * Demonstrates practical applications of functional programming in linear algebra.
+ * Vectors are represented as collections, operations use zip/map patterns.
+ * 
+ * KEY CONCEPTS:
+ * - Scalar (Dot) Product: v⃗ · w⃗ = Σᵢ(vᵢ × wᵢ)
+ * - Element-wise operations via zip
+ * - Functional composition for complex operations
  */
 
 /**
  * Scalar (dot) product implementation using tuple access.
- * Formula: (x₁, x₂) · (y₁, y₂) = x₁×y₁ + x₂×y₂
+ * 
+ * Mathematical Formula: v⃗ · w⃗ = v₁×w₁ + v₂×w₂ + ... + vₙ×wₙ
+ * 
+ * IMPLEMENTATION STEPS:
+ * 1. Zip vectors to create coordinate pairs
+ * 2. Map each pair to its product
+ * 3. Sum all products
  */
 def scalarProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
     (xs zip ys).map(xy => xy._1 * xy._2).sum
 }
 
 // Test with vectors (1,2) and (3,4): 1×3 + 2×4 = 11
-println(scalarProduct(Vector(1,2), Vector(3,4)))
+println(scalarProduct(Vector(1,2), Vector(3,4)))  // Expected: 11.0
 
 /**
  * Alternative dot product implementation using pattern matching.
  * More idiomatic Scala style with case destructuring.
+ * Functionally equivalent but more readable.
  */
 def dotProduct(xs: Vector[Double], ys: Vector[Double]): Double = {
-    (xs zip ys).map{ case (x, y) => x * y}.sum
+    (xs zip ys).map{ case (x, y) => x * y}.sum  // Pattern matching on tuples
 }
 
 // Test the alternative implementation
@@ -293,22 +475,66 @@ println((1 to 20).filter(x => isPrime(x)))
 // ===================================
 
 /**
- * This comprehensive demonstration covers:
- * 1. Basic collections (Arrays, Lists, Vectors, Sets, Maps)
- * 2. Collection comparison gotchas (== vs sameElements)
- * 3. String operations as character sequences  
- * 4. Zipping and sliding window patterns
- * 5. FlatMap for one-to-many transformations
- * 6. Range operations and arithmetic progressions
- * 7. Cartesian products and combinatorics
- * 8. Vector mathematics and linear algebra
- * 9. Mathematical algorithms using quantifiers
+ * =====================================================================================
+ * COMPREHENSIVE SCALA COLLECTIONS TUTORIAL SUMMARY
+ * =====================================================================================
  * 
- * Key functional programming concepts demonstrated:
- * - Higher-order functions (map, filter, flatMap, forall, exists)
- * - Immutable data structures
- * - Collection transformation pipelines
- * - Mathematical reasoning with code
+ * This educational demonstration systematically covers all essential aspects of 
+ * Scala collections and functional programming patterns:
+ * 
+ * COLLECTION FUNDAMENTALS:
+ * 1. Basic collections (Arrays, Lists, Vectors, Sets, Maps)
+ *    - Mutability vs immutability characteristics
+ *    - Performance implications and use cases
+ *    - Syntax and construction patterns
+ * 
+ * 2. Collection comparison gotchas (== vs sameElements)
+ *    - Reference equality vs structural equality
+ *    - Array-specific comparison behaviors
+ * 
+ * ADVANCED OPERATIONS:
+ * 3. String operations as character sequences
+ *    - Treating strings as Seq[Char]
+ *    - Text processing with functional methods
+ * 
+ * 4. Zipping and sliding window patterns
+ *    - Parallel collection processing
+ *    - Bigram generation for text analysis
+ * 
+ * 5. FlatMap for one-to-many transformations
+ *    - Monadic operations and flattening
+ *    - Data denormalization patterns
+ * 
+ * 6. Range operations and arithmetic progressions
+ *    - Lazy evaluation and memory efficiency
+ *    - Mathematical sequence generation
+ * 
+ * 7. Cartesian products and combinatorics
+ *    - Nested flatMap/map patterns
+ *    - Systematic combination generation
+ * 
+ * 8. Vector mathematics and linear algebra
+ *    - Dot product implementations
+ *    - Functional approach to numerical computing
+ * 
+ * 9. Mathematical algorithms using quantifiers
+ *    - Prime number testing with forall/exists
+ *    - Mathematical proof techniques in code
+ * 
+ * CORE FUNCTIONAL PROGRAMMING CONCEPTS DEMONSTRATED:
+ * - Higher-order functions (map, filter, flatMap, fold, forall, exists)
+ * - Immutable data structures and persistence
+ * - Collection transformation pipelines and composition
+ * - Mathematical reasoning expressed through code
+ * - Lazy evaluation and performance optimization
+ * - Type safety and generic programming
+ * - Pattern matching and case destructuring
+ * 
+ * PEDAGOGICAL VALUE:
+ * This tutorial bridges mathematical concepts with practical programming,
+ * demonstrating how functional programming enables elegant solutions to
+ * complex problems through composition of simple operations.
+ * =====================================================================================
  */
 
 val n = 7
