@@ -150,7 +150,7 @@ println(queens(4))
 
 // Print visual ASCII chessboard representations
 println("\nVisual representations of all solutions:")
-(queens(4) map show) foreach println
+(queens(8) take 3 map show) foreach println
 
 /**
  * ALGORITHM COMPLEXITY ANALYSIS:
